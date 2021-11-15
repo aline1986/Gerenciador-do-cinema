@@ -39,7 +39,7 @@ namespace Projeto.DAL
         }
         private static string GetConnection()
         {
-            return "";
+            return "Data Source=(LocalDB)/MSSQLLocalDB;AttachDbFilename=C:/Gerenciador do Cinema/Gerenciador do Cinema/Projeto.Apresentacao2/App_Data/Banco.mdf;Integrated Security=True";
             ///o endereço do caminho banco de dados
         }
         protected void CloseConnection()
