@@ -42,7 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexao.cs" />
+    <Compile Include="Gerenciamento_de_sessoes_Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Projeto.Entidades\Projeto.Entidades.csproj">
+      <Project>{b42e7fae-88c9-484b-8bf8-4715e2526d4e}</Project>
+      <Name>Projeto.Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Gerenciamento de sessoes.cs" />
+    <Compile Include="Gerenciamento_de_sessoes.cs" />
     <Compile Include="Gerenciamento_de_filmes.cs" />
     <Compile Include="Lista_de_salas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -125,6 +125,7 @@
     <Compile Include="Models\Lista_de_salas_Cadastro_View_Model.cs" />
     <Compile Include="Models\Lista_de_salas_Consulta_View_Model.cs" />
     <Compile Include="Models\Lista_de_salas_Edicao_View_Model.cs" />
+    <Compile Include="Models\Usuario_Cadastro_View_Model.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
