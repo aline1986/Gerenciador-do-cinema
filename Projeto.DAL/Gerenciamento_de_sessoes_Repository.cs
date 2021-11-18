@@ -15,141 +15,161 @@ namespace Projeto.DAL
         {
             OpenConnection();
             /// Abre a Conexao
-            string query = "INSERT INTO Gerenciamento_de_sessoes (Data, Horario_de_inicio, Horario_de_fim, Valor_do_ingresso, Tipo_de_animação, Tipo_de_audio, Id_sala, Id_filme)" +
-                " VALUES (GetDate(), @Horario_de_inicio, @Horario_de_fim, @Valor_do_ingresso, @Tipo_de_animação, @Tipo_de_audio, @Id_sala, @Id_filme')";
+            string query = "INSERT INTO Gerenciamento_de_sessoes (Data, Horario_de_inicio, Horario_de_fim, Valor_do_ingresso, Tipo_de_animacao, Tipo_de_audio, Id_sala, Id_filme)" +
+                " VALUES (@Data, @Horario_de_inicio, @Horario_de_fim, @Valor_do_ingresso, @Tipo_de_animacao, @Tipo_de_audio, @Id_sala, @Id_filme')";
            
-            /// Conversa com a Base
+            // Conversa com a Base
             com = new SqlCommand(query, con);
-            /// Instancia do SqlCommand
-            //com.Parameters.AddWithValue("@NOME", F.Nome);
-            /// Campo Nome
-            //com.Parameters.AddWithValue("@E_MAIL", F.Email);
-            /// Campo E - mail
-            //com.Parameters.AddWithValue("@TELEFONE", F.Telefone);
-            /// Campo Telefone
-            //com.Parameters.AddWithValue("@DESCRICAO", F.Descricao);
-            /// Campo Descricao
+            ///Instancia do SqlCommand
+            com.Parameters.AddWithValue("@Data", G.Data);
+            /// Data
+            com.Parameters.AddWithValue("@Horario_de_inicio", G.Horario_de_inicio);
+            /// Campo Horario_de_inicio
+            com.Parameters.AddWithValue("@Horario_de_fim", G.Horario_de_fim);
+            /// Horario_de_fim
+            com.Parameters.AddWithValue("@Valor_do_ingresso", G.Valor_do_ingresso);
+            /// Campo Valor_do_ingresso
+            com.Parameters.AddWithValue("@Tipo_de_animacao", G.Tipo_de_animacao);
+            /// Tipo_de_animação"
+            com.Parameters.AddWithValue("@Tipo_de_audio", G.Tipo_de_audio);
+            /// Tipo_de_audio
+            com.Parameters.AddWithValue("@Id_sala", G.Id_sala);
+            /// Id_sala
+            com.Parameters.AddWithValue("@Id_filme", G.Id_filme);
+            /// Campo Id_filme
             com.ExecuteNonQuery();
             /// Roda a Querie
             CloseConnection();
             /// Fecha a Conexao 
         }
 
-        //public void Update(FaleConosco f)
-        /// Declaracao do Metodo de Editar os Dados do Fale Conosco
-        //{
-        //    OpenConnection();
+        public void Update(Gerenciamento_de_sessoes G)
+        /// Declaracao do Metodo de Editar os Dados do Gerenciamento_de_sessoes
+        {
+            OpenConnection();
             /// Abre a Conexao
-            //string query = "UPDATE FALE_CONOSCO SET NOME = @NOME, E_MAIL = @E_MAIL, TELEFONE = @TELEFONE, DESCRICAO = @DESCRICAO WHERE CODIGO = @CODIGO";
+            string query = "UPDATE Gerenciamento_de_sessoes SET Data = @Data, Horario_de_inicio = @Horario_de_inicio, Horario_de_fim = @Horario_de_fim ," +
+                " Valor_do_ingresso = @Valor_do_ingresso, Tipo_de_animacao = @Tipo_de_animacao, Tipo_de_audio = @Tipo_de_audio, Id_sala = @Id_sala, Id_filme = @Id_filme" +
+                " Where Id = @Id";
             /// Conversa com a Base
-            //com = new SqlCommand(query, con);
+            com = new SqlCommand(query, con);
             /// Instancia do SqlCommand
-            //com.Parameters.AddWithValue("@NOME", f.Nome);
-            /// Campo Nome
-            //com.Parameters.AddWithValue("@E_MAIL", f.Email);
-            /// Campo E - mail
-            //com.Parameters.AddWithValue("@TELEFONE", f.Telefone);
-            /// Campo Telefone
-            //com.Parameters.AddWithValue("@DESCRICAO", f.Descricao);
-            /// Campo Descricao
-            //com.Parameters.AddWithValue("@CODIGO", f.Codigo);
-            /// Campo Codigo
-            //com.ExecuteNonQuery();
+            com.Parameters.AddWithValue("@Id", G.Id);
+            /// Campo Id
+            com.Parameters.AddWithValue("@Data", G.Data);
+            /// Campo Data
+            com.Parameters.AddWithValue("@Horario_de_inicio", G.Horario_de_inicio);
+            /// Campo Horario_de_inicio
+            com.Parameters.AddWithValue("@Horario_de_fim", G.Horario_de_fim);
+            /// Campo Horario_de_fim
+            com.Parameters.AddWithValue("@Valor_do_ingresso", G.Valor_do_ingresso);
+            /// Campo Valor_do_ingresso
+            com.Parameters.AddWithValue("@Tipo_de_animacao", G.Tipo_de_animacao);
+            /// Tipo_de_animacao
+            com.Parameters.AddWithValue("@Tipo_de_audio", G.Tipo_de_audio);
+            /// Tipo_de_audio
+            com.Parameters.AddWithValue("@Id_sala", G.Id_sala);
+            /// Campo Id_sala
+            com.Parameters.AddWithValue("@Id_filme", G.Id_filme);
+            /// Campo Id_filme
+            com.ExecuteNonQuery();
             /// Roda a Querie
-            //CloseConnection();
+            CloseConnection();
             /// Fecha a Conexao
-        //}
+            }
 
-        //public void Delete(FaleConosco f)
-        /// Metodo de Desligamento do Fale Conosco da Aplicacao
-        //{
-            //OpenConnection();
-            /// Abre a Conexao com a Base
-            //string query = "UPDATE FALE_CONOSCO SET STATUS = @STATUS WHERE CODIGO = @CODIGO";
-            /// Conversa com a Base
-            //com = new SqlCommand(query, con);
-            /// Instancia do SqlCommand
-            //com.Parameters.AddWithValue("@CODIGO", f.Codigo);
-            /// Parametro Codigo do Fale Conosco
-            //com.ExecuteNonQuery();
-            /// Roda a Query
-            //CloseConnection();
-            /// FEcha a Conexao
-        //}
+        public void Delete(Gerenciamento_de_sessoes G)
+        /// Metodo de Desligamento do Gerenciamento de filmes da Aplicacao
+        {
+        OpenConnection();
+        /// Abre a Conexao com a Base
+        string query = "DELETE FROM Gerenciamento_de_sessoes   WHERE Id = @Id";
+        /// Conversa com a Base
+        com = new SqlCommand(query, con);
+        /// Instancia do SqlCommand
+        com.Parameters.AddWithValue("@Id", G.Id);
+            /// Parametro Id Gerenciamento_de_sessoes
+            com.ExecuteNonQuery();
+        /// Roda a Query
+        CloseConnection();
+        /// FEcha a Conexao
+        }
 
-        //public List<FaleConosco> FindAll()
+        public List<Gerenciamento_de_sessoes> FindAll()
         /// Metodo de Listagem
-        //{
-            //OpenConnection();
-            /// Abre a Conexao
-            //string query = "SELECT * FROM FALE_CONOSCO WHERE STATUS = 'ABERTO'";
-            /// Conversa com a Base
-            //com = new SqlCommand(query, con);
-            /// Instancia do SqlCommand
-            //dr = com.ExecuteReader();
-            /// Leitura dos Dados
-            //List<FaleConosco> lista = new List<FaleConosco>();
-            /// Instancia do Lista com a Entidade FaleConosco
-            //while (dr.Read())
-            //{
-                /// Leitura dos Dados
-                //FaleConosco F = new FaleConosco();
-                /// Instancia da Entidade Fale Conosco
-                //F.Nome = Convert.ToString(dr["NOME"]);
-                /// Campo Nome
-                //F.Descricao = Convert.ToString(dr["DESCRICAO"]);
-                /// Campo Descricao
-                //F.Email = Convert.ToString(dr["E_MAIL"]);
-                /// Campo E - mail
-                //F.Telefone = Convert.ToString(dr["TELEFONE"]);
-                /// Campo Telefone
+        {
+        OpenConnection();
+        /// Abre a Conexao
+        string query = "SELECT * FROM Gerenciamento_de_sessoes";
+        /// Conversa com a Base
+        com = new SqlCommand(query, con);
+        /// Instancia do SqlCommand
+        dr = com.ExecuteReader();
+        /// Leitura dos Dados
+        List<Gerenciamento_de_sessoes> lista = new List<Gerenciamento_de_sessoes>();
+            /// Instancia do Lista com a Entidade Gerenciamento_de_sessoes
+            while (dr.Read())
+        {
+        /// Leitura dos Dados
+        Gerenciamento_de_sessoes G = new Gerenciamento_de_sessoes();
+         /// Instancia da Entidade Gerenciamento_de_sessoes
+         G.Id = Convert.ToInt32(dr["Id"]);
+         /// Campo Id
+         G.Data = Convert.ToDateTime(dr["Data"]);
+        /// Campo Data
+         G.Horario_de_inicio = (TimeSpan)dr["Horario_de_inicio"];
+        /// Horario_de_inicio
+         G.Horario_de_fim = (TimeSpan)dr["Horario_de_fim"];
+         /// Horario_de_fim
+         G.Valor_do_ingresso = Convert.ToDouble(dr["Valor_do_ingresso"]);
+         /// Campo Valor_do_ingresso
 
-                //lista.Add(F);
-            //}
+                lista.Add(G);
+                }
 
-            //CloseConnection();
-            /// Fecha a Conexao
-            //return lista;
-            /// Retorna Para a Lista
-        //}
-        //public FaleConosco FindById(int codigo)
+                CloseConnection();
+                /// Fecha a Conexao
+                return lista;
+                /// Retorna Para a Lista
+                }
+        public Gerenciamento_de_sessoes FindById(int Id)
         /// Metodo de Consulta Filtrada
-        //{
-            //OpenConnection();
-            /// Abre a Conexao
-            //string query = "SELECT * FROM FALE_CONOSCO WHERE CODIGO = @CODIGO";
-            /// Conversa com a Base
-            //com = new SqlCommand(query, con);
-            /// Instancia do sqlCommand
-            //com.Parameters.AddWithValue("@CODIGO", codigo);
-            /// Campo Codigo do Fale Conosco
-            //dr = com.ExecuteReader();
+        {
+        OpenConnection();
+        /// Abre a Conexao
+        string query = "SELECT * FROM Gerenciamento_de_sessoes WHERE Id = @Id";
+        /// Conversa com a Base
+        com = new SqlCommand(query, con);
+        /// Instancia do sqlCommand
+        com.Parameters.AddWithValue("@Id", Id);
+            /// Campo Id Gerenciamento_de_sessoes
+            dr = com.ExecuteReader();
             /// Leitura dos Dados
-            //FaleConosco f = null;
-            /// Instancia da Entidade Fale Conosco
-            //if (dr.Read())
-            //{
+            Gerenciamento_de_sessoes G = null;
+            /// Instancia da Entidade Gerenciamento_de_sessoes
+            if (dr.Read())
+            {
                 /// Leitura dos Dados
-                //f = new FaleConosco();
+                G = new Gerenciamento_de_sessoes();
 
-                //f.Codigo = Convert.ToInt32(dr["CODIGO"]);
+                G.Id = Convert.ToInt32(dr["Id"]);
                 /// Campo Codigo
-                //f.Nome = Convert.ToString(dr["NOME"]);
-                /// Campo Nome
-                //f.Telefone = Convert.ToString(dr["TELEFONE"]);
-                /// Campo Telefone
-                //f.Email = Convert.ToString(dr["E_MAIL"]);
-                /// Campo E - mail
-                //f.Descricao = Convert.ToString(dr["DESCRICAO"]);
-                /// Campo Descricao
-            //}
+                G.Data = Convert.ToDateTime(dr["Data"]);
+                /// Campo Data
+                G.Horario_de_inicio = (TimeSpan)(dr["Horario_de_inicio"]);
+                /// Campo Horario_de_inicio
+                G.Horario_de_fim = (TimeSpan)(dr["Horario_de_fim"]);
+                /// Campo Horario_de_fim
+                G.Valor_do_ingresso = Convert.ToDouble(dr["Valor_do_ingresso"]);
+                /// Campo Valor_do_ingresso
+            }
 
-            //CloseConnection();
-            /// Fecha a Conexao
-            //return f;
-            /// Retorna a Entidade
-        //}
+            CloseConnection();
+                /// Fecha a Conexao
+                return G;
+                /// Retorna a Entidade
+            }
 
-    //}
+     }
 }
-}
+
