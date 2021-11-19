@@ -29,7 +29,7 @@ namespace Projeto.DAL
             /// Duracao
             com.Parameters.AddWithValue("@Imagem", G.Imagem);
             /// Campo Imagem
-            
+
             com.ExecuteNonQuery();
             /// Roda a Querie
             CloseConnection();
@@ -56,7 +56,7 @@ namespace Projeto.DAL
             /// Campo Duracao
             com.Parameters.AddWithValue("@Imagem", G.Imagem);
             /// Campo Imagem
-           
+
             com.ExecuteNonQuery();
             /// Roda a Querie
             CloseConnection();
@@ -64,7 +64,7 @@ namespace Projeto.DAL
         }
 
         public void Delete(Gerenciamento_de_filmes G)
-        /// Metodo de Desligamento do Fale Conosco da Aplicacao
+        /// Metodo de Desligamento do Lista_de_salas
         {
             OpenConnection();
             /// Abre a Conexao com a Base
