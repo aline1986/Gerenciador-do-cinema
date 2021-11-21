@@ -1,7 +1,54 @@
 ﻿
-@{
-    ViewBag.Title = "Index";
-}
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>  
+                <span class="icon-bar"></span>  
+                <span class="icon-bar"></span>  
+            </button>
+           
+           <a href="~/Forms/Portal.aspx" class="navbar-brand" >Acessar</a>
+           
+        </div>
+        <br />
+        <table  align="right" >
+            <tr >
+                <td><font color="White" face="arial" size="3">@DateTime.Now.DayOfWeek - @DateTime.Now.Day / @DateTime.Now.Month / @DateTime.Now.Year  @DateTime.Now.Hour : @DateTime.Now.Minute Hrs</font></td>
+            </tr>
+        </table>
+        @*Relogio da Pagina*@
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav"></ul>
+        </div>
+    </div>
+</div>
+@*Layout da Pagina*@
+<h2>Seja Bem vindo ao Gerenciador de cinema</h2>
+<font face="arial" size="5">Facilitando a gestão</font>
+<div class="container body-content">
+    @*@RenderBody()*@
+    <hr />
+    @*Renderizacao*@
+    <br />
+    @*Pula mais 1 linha*@
+    <center><img src="https://clinicacanto.com.br/uploads//x1492619779-.jpg.pagespeed.ic.o-OopzI7Tp.jpg" width="650px" height="280px" /></center>
+    @*Imagem da Pagina Centralizada*@
+    <br /><br />
+    @*Pula 2 linhas*@
+    @*<center><strong>Gerenciador de cinema</strong></center>*@
+    @*Titulo da Pagina*@
+    <br />
+    @*Pula mais 1 linha*@
+   
+    @*Texto da Pagina*@
+    <br />
+    @*Pula mais 1 linha*@
+   
+</div>
+@*Ano da Atuacao da Pagina*@
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
 
-<h2>Index</h2>
+
 
