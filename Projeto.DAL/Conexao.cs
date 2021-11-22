@@ -33,7 +33,7 @@ namespace Projeto.DAL
         protected void OpenConnection()
         /// Metodo de Abrir Conexao
         {
-            con = new SqlConnection(Connection);
+            con = new SqlConnection(ConfigurationManager.ConnectionStrings["GerenciadorDoCinema"].ConnectionString);
             con.Open();
             ///Abrindo a conexao
         }

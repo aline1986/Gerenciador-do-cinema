@@ -47,27 +47,33 @@
 
                         u.Login = Convert.ToString(dr["Login"]);
                         u.Senha = Convert.ToString(dr["Senha"]);
-                            
-                            /// Codigo do(a) Usuario(a) Administrador(a)
+
+                        /// Codigo do(a) Usuario(a) Administrador(a)
                             %>
            
-              Integração com banco realizada com sucesso
+              <script>
+                window.location.href = "../Home/Logado";
+            </script> 
           
-                        <% }%>
-                            
+                        <% } else { %>
+              <script>
+                window.location.href = "../Home/Erro";
+            </script>
                              <% 
-                                          
-            
-                                                    con.Close();
-                                                    /// Fecha a Conexao
-                                                }%>
+
+     }
+        con.Close();
+        /// Fecha a Conexao
+    }%>
                                                 
                                                         <%
                                                catch (Exception e)
                                                 {
                                                     /// Se tiver que da tratamento
                     %> 
-                           ('Erro ' + <%= e.Message %>);
+            <script>
+                window.location.href = "../Home/Catch";
+            </script>
 
                        
                                            <% /// Gera a mensagem de erro %>     
@@ -77,9 +83,7 @@
     </form>
             <center>
                 <br />
-            <footer>
-                <p>&copy; <%= DateTime.Now.Year %> - Lanchonete</p>
-            </footer>
+           
         </center>
             <% /// Informacao da Pagina %>
 </body>

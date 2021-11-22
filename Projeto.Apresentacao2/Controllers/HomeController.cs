@@ -12,6 +12,22 @@ namespace Projeto.Apresentacao2.Controllers
         public ActionResult Index()
         {
             return View();
+
+        }
+
+        public ActionResult Logado()
+        {
+            return View();
+        }
+
+        public ActionResult Erro()
+        {
+            return View();
+        }
+
+        public ActionResult Catch()
+        {
+            return View();
         }
     }
 }

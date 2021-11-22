@@ -8,7 +8,9 @@ namespace Projeto.Apresentacao2.Models
 {
     public class Usuario_Cadastro_View_Model
     {
+        
         public string Login { get; set; }
+
         public string Senha { get; set; }
     }
 }
