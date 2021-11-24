@@ -115,6 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FilmeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Forms\ControllerPortal.aspx.cs">
       <DependentUpon>ControllerPortal.aspx</DependentUpon>
@@ -171,6 +172,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Projeto.DAL\Projeto.DAL.csproj">
+      <Project>{09773b5c-36e1-4303-9605-573312415f7b}</Project>
+      <Name>Projeto.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Projeto.Entidades\Projeto.Entidades.csproj">
       <Project>{b42e7fae-88c9-484b-8bf8-4715e2526d4e}</Project>
       <Name>Projeto.Entidades</Name>
@@ -178,6 +183,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Filme\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
