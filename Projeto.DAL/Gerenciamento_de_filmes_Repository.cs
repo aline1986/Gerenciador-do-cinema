@@ -104,7 +104,7 @@ namespace Projeto.DAL
                 /// Campo Titulo
                 G.Descricao = Convert.ToString(dr["Descricao"]);
                 /// Campo Descricao
-                G.Duracao = (TimeSpan)dr["Duracao"];
+                G.Duracao = Convert.ToInt32(dr["Duracao"]);
                 /// Campo Duracao
                 G.Imagem = Convert.ToString(dr["Imagem"]);
                 /// Campo Valor_do_ingresso
@@ -143,7 +143,7 @@ namespace Projeto.DAL
                 /// Campo Titulo
                 G.Descricao = Convert.ToString(dr["Descricao"]);
                 /// Campo Descricao
-                G.Duracao = (TimeSpan)(dr["Duracao"]);
+                G.Duracao = Convert.ToInt32(dr["Duracao"]);
                 /// Campo Duracao
                 G.Imagem = Convert.ToString(dr["Imagem"]);
                 /// Campo Descricao

@@ -6,21 +6,24 @@
 <h2>Cadastro</h2>
 <hr />
 @model Projeto.Apresentacao2.Models.Gerenciamento_de_filmes_Cadastro_View_Model
-<form method="post" action="#">
+<form method="post" action="~/Forms/ActionCadastroFilme.aspx">
     @*Formulario*@
     <div class="row">
         <div class="col-md-4">
             <label><font face="arial" size="3">Título:</font></label>
-           <input type="text" name="Titulo" class="form-control" />
+            <input type="text" name="Titulo" class="form-control" />
             @*Campo Titulo*@
             <br /><br />
             <label><font face="arial" size="3">Descrição:</font></label>
-            <textarea name="Descricao" class="form-control" ></textarea>
+            <textarea name="Descricao" class="form-control"></textarea>
             @*Campo Descricao*@
             <br /><br />
-            <label><font face="arial" size="3">Duracao:</font></label>
-            <input type="time" name="Duracao" class="form-control" />
-            @*Campo Descricao*@
+            <label><font face="arial" size="3">Duracao em Horas:</font></label>
+            <input type="number" name="Duracao" min="0" max="3" class="form-control" />
+            @*Campo Duracao*@
+            <br /><br />
+            <label><font face="arial" size="3">Imagem:</font></label>
+            <input type="file" name="Imagem" class="btn-success btn-sm" />
             <br /><br />
             <input type="submit" class="btn btn-primary btn-sm" value="Cadastrar filme" />
             @*Botao de Cadastro de filme*@

@@ -102,8 +102,11 @@
     <Content Include="Content\bootstrapAline.css" />
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Forms\ActionCadastroFilme.aspx" />
+    <Content Include="Forms\ConFilmeAlterar.aspx" />
     <Content Include="Forms\ControllerPortal.aspx" />
     <Content Include="Forms\Portal.aspx" />
+    <Content Include="Forms\ResConFilmeAlt.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -117,6 +120,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\FilmeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Forms\ActionCadastroFilme.aspx.cs">
+      <DependentUpon>ActionCadastroFilme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ActionCadastroFilme.aspx.designer.cs">
+      <DependentUpon>ActionCadastroFilme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConFilmeAlterar.aspx.cs">
+      <DependentUpon>ConFilmeAlterar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ConFilmeAlterar.aspx.designer.cs">
+      <DependentUpon>ConFilmeAlterar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ControllerPortal.aspx.cs">
       <DependentUpon>ControllerPortal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -130,6 +147,13 @@
     </Compile>
     <Compile Include="Forms\Portal.aspx.designer.cs">
       <DependentUpon>Portal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ResConFilmeAlt.aspx.cs">
+      <DependentUpon>ResConFilmeAlt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ResConFilmeAlt.aspx.designer.cs">
+      <DependentUpon>ResConFilmeAlt.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -165,6 +189,8 @@
     <Content Include="Views\Home\Erro.cshtml" />
     <Content Include="Views\Home\Catch.cshtml" />
     <Content Include="Views\Filme\Cadastro.cshtml" />
+    <Content Include="Views\Home\CadastroSucessoFilme.cshtml" />
+    <Content Include="Views\Home\CadastroErroFilme.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -12,7 +12,7 @@ namespace Projeto.Entidades
         public int Id { get; set; }
         public string Titulo { get; set; }
         public string Descricao { get; set; }
-        public TimeSpan Duracao { get; set; }
+        public int Duracao { get; set; }
         public string Imagem { get; set; }
 
         public Gerenciamento_de_filmes()
@@ -20,7 +20,7 @@ namespace Projeto.Entidades
                 
         }
 
-        public Gerenciamento_de_filmes(int id, string titulo, string descricao, TimeSpan duracao, string imagem)
+        public Gerenciamento_de_filmes(int id, string titulo, string descricao, int duracao, string imagem)
         {
             Id = id;
             Titulo = titulo;

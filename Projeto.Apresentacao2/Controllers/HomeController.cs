@@ -29,5 +29,15 @@ namespace Projeto.Apresentacao2.Controllers
         {
             return View();
         }
+
+        public ActionResult CadastroSucessoFilme()
+        {
+            return View();
+        }
+
+        public ActionResult CadastroErroFilme()
+        {
+            return View();
+        }
     }
 }
