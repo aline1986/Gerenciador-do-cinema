@@ -1,0 +1,35 @@
+﻿@{
+                /**/
+                ViewBag.Title = "Cadastro";
+                Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Cadastro</h2>
+<hr />
+@model Projeto.Apresentacao2.Models.Gerenciamento_de_filmes_Cadastro_View_Model
+<form method="post" action="#">
+    @*Formulario*@
+    <div class="row">
+        <div class="col-md-4">
+            <label><font face="arial" size="3">Título:</font></label>
+           <input type="text" name="Titulo" class="form-control" />
+            @*Campo Titulo*@
+            <br /><br />
+            <label><font face="arial" size="3">Descrição:</font></label>
+            <textarea name="Descricao" class="form-control" ></textarea>
+            @*Campo Descricao*@
+            <br /><br />
+            <label><font face="arial" size="3">Duracao:</font></label>
+            <input type="time" name="Duracao" class="form-control" />
+            @*Campo Descricao*@
+            <br /><br />
+            <input type="submit" class="btn btn-primary btn-sm" value="Cadastrar filme" />
+            @*Botao de Cadastro de filme*@
+            <hr />
+            <strong><font color="green" face="arial" size="3">@ViewBag.Message</font></strong>
+            @*Aviso da Pagina*@
+            <strong><font color="red" face="arial" size="3">@ViewBag.MessageErro</font></strong>
+            @*Aviso da Pagina*@
+        </div>
+    </div>
+</form>
+
