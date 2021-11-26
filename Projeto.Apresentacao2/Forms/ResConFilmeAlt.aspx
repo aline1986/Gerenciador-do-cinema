@@ -29,6 +29,7 @@
                 <%@Import Namespace="System.Data.SqlClient"  %>
                 <%@Import Namespace="System.Configuration"  %>  
                 <%@Import Namespace="Projeto.Entidades" %>
+            
               
                         <% /// Assemblies Para Entidades e Conexao com a Base %>
             <%  

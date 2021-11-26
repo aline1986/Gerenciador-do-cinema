@@ -40,6 +40,7 @@
                 <%@Import Namespace="System.Data.SqlClient"  %>
                 <%@Import Namespace="System.Configuration"  %>  
                 <%@Import Namespace="Projeto.Entidades" %>
+             <%@Import Namespace="System.IO"  %>
               
                         <% /// Assemblies Para Entidades e Conexao com a Base %>
             <%  
@@ -80,7 +81,7 @@
                                 <td></td>
                                <td><center><%: gf.Titulo %></center></td>
                                 <td><center><%: gf.Duracao %></center></td> 
-                                <td><center><%: gf.Imagem %></center></td>
+                                <td><center><img src=" <%: "../Imagem/" + gf.Imagem %>" width="155px" /></center></td>
                                 <td><center><a href="ResConFilmeAlt.aspx?Id=<%: gf.Id%>" class="btn-primary btn-sm">O</a></center></td>
                             </tr>
                         <% } %>

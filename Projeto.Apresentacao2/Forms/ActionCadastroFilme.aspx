@@ -6,7 +6,9 @@
                 <%@Import Namespace="System.Data.SqlClient"  %>
                 <%@Import Namespace="System.Configuration"  %>  
                 <%@Import Namespace="Projeto.Entidades" %>
-              
+                <%@Import Namespace="System.IO"  %>
+               
+
                         <% /// Assemblies Para Entidades e Conexao com a Base %>
             <%  
                 try
@@ -21,7 +23,31 @@
                     gf.Titulo = Request.Form["Titulo"];
                     gf.Descricao = Request.Form["Descricao"];
                     gf.Duracao = Convert.ToInt32(Request.Form["Duracao"]);
-                    gf.Imagem = Request.Form["Imagem"];
+                    gf.Imagem =  Request.Form["Imagem"];
+
+                    string img = "c:/" + gf.Imagem;
+
+                    if(Directory.Exists("C://"))
+                    {
+
+                        Directory.GetFiles("c:/", gf.Imagem, SearchOption.TopDirectoryOnly);
+
+                        if (!Directory.Exists("C:/Imgs/"))
+                        {
+                            Directory.CreateDirectory("C:/Imgs/");
+                        }
+                         File.Copy("C:/" + gf.Imagem, "C:/Gerenciador_do_Cinema_2021/Gerenciador-do-cinema/Projeto.Apresentacao2/Imagem/" + gf.Imagem);
+
+                    }
+
+
+
+
+
+                   %>
+                <script>   
+                    <%: gf.Imagem %> </script>
+            <%
 
                     SqlCommand com = new SqlCommand("INSERT INTO Gerenciamento_de_filmes(Titulo, Descricao, Duracao, " +
                         "Imagem) VALUES ('" + gf.Titulo +"', '" + gf.Descricao + "', " + gf.Duracao + ", '" + gf.Imagem + "')", con);
@@ -29,6 +55,7 @@
                     /// Conversa com a base
                     /// 
                     %>
+            
                 <script>
                 window.location.href = "../Home/CadastroSucessoFilme";
             </script> 
@@ -52,5 +79,6 @@
                 <% }
      %>
         </div>
+    
     </form>
     

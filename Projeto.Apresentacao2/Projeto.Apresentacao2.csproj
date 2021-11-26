@@ -108,9 +108,11 @@
     <Content Include="Forms\Portal.aspx" />
     <Content Include="Forms\ResConFilmeAlt.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Imagem\download %284%29.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Image.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
