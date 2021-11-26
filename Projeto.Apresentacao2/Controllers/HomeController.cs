@@ -59,5 +59,15 @@ namespace Projeto.Apresentacao2.Controllers
         {
             return View();
         }
+
+        public ActionResult EditarSucessoImgFilme()
+        {
+            return View();
+        }
+
+        public ActionResult EditarErroImgFilme()
+        {
+            return View();
+        }
     }
 }

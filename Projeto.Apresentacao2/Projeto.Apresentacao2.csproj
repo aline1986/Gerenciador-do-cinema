@@ -103,13 +103,19 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Forms\ActionCadastroFilme.aspx" />
+    <Content Include="Forms\ConAltSala.aspx" />
+    <Content Include="Forms\ConExcSala.aspx" />
     <Content Include="Forms\ConFilmeAlterar.aspx" />
+    <Content Include="Forms\ConFilmeAltImg.aspx" />
     <Content Include="Forms\ConFilmeExcluir.aspx" />
+    <Content Include="Forms\ConSala.aspx" />
     <Content Include="Forms\ControllerPortal.aspx" />
     <Content Include="Forms\DeleteFilme.aspx" />
     <Content Include="Forms\Portal.aspx" />
     <Content Include="Forms\ResConFilmeAlt.aspx" />
+    <Content Include="Forms\ResConFilmeAltImg.aspx" />
     <Content Include="Forms\UpdateFilme.aspx" />
+    <Content Include="Forms\UpdateFilmeImg.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Imagem\assentos.ingresso.png" />
     <Content Include="Imagem\download %283%29.jpg" />
@@ -137,6 +143,20 @@
     <Compile Include="Forms\ActionCadastroFilme.aspx.designer.cs">
       <DependentUpon>ActionCadastroFilme.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ConAltSala.aspx.cs">
+      <DependentUpon>ConAltSala.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ConAltSala.aspx.designer.cs">
+      <DependentUpon>ConAltSala.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConExcSala.aspx.cs">
+      <DependentUpon>ConExcSala.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ConExcSala.aspx.designer.cs">
+      <DependentUpon>ConExcSala.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ConFilmeAlterar.aspx.cs">
       <DependentUpon>ConFilmeAlterar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -144,12 +164,26 @@
     <Compile Include="Forms\ConFilmeAlterar.aspx.designer.cs">
       <DependentUpon>ConFilmeAlterar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ConFilmeAltImg.aspx.cs">
+      <DependentUpon>ConFilmeAltImg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ConFilmeAltImg.aspx.designer.cs">
+      <DependentUpon>ConFilmeAltImg.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ConFilmeExcluir.aspx.cs">
       <DependentUpon>ConFilmeExcluir.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Forms\ConFilmeExcluir.aspx.designer.cs">
       <DependentUpon>ConFilmeExcluir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConSala.aspx.cs">
+      <DependentUpon>ConSala.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ConSala.aspx.designer.cs">
+      <DependentUpon>ConSala.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\ControllerPortal.aspx.cs">
       <DependentUpon>ControllerPortal.aspx</DependentUpon>
@@ -179,12 +213,26 @@
     <Compile Include="Forms\ResConFilmeAlt.aspx.designer.cs">
       <DependentUpon>ResConFilmeAlt.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ResConFilmeAltImg.aspx.cs">
+      <DependentUpon>ResConFilmeAltImg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ResConFilmeAltImg.aspx.designer.cs">
+      <DependentUpon>ResConFilmeAltImg.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UpdateFilme.aspx.cs">
       <DependentUpon>UpdateFilme.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Forms\UpdateFilme.aspx.designer.cs">
       <DependentUpon>UpdateFilme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UpdateFilmeImg.aspx.cs">
+      <DependentUpon>UpdateFilmeImg.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateFilmeImg.aspx.designer.cs">
+      <DependentUpon>UpdateFilmeImg.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -228,6 +276,8 @@
     <Content Include="Views\Home\ExcluirErroFilme.cshtml" />
     <Content Include="Views\Filme\Consulta.cshtml" />
     <Content Include="Views\Sala\Cadastro.cshtml" />
+    <Content Include="Views\Home\EditarSucessoImgFilme.cshtml" />
+    <Content Include="Views\Home\EditarErroImgFilme.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
