@@ -45,5 +45,33 @@ namespace Projeto.Apresentacao2.Controllers
             Gerenciamento_de_filmes_Cadastro_View_Model viewModel = new Gerenciamento_de_filmes_Cadastro_View_Model();
             return View(viewModel);
         }
+
+        public ActionResult Consulta()
+        {
+            List<Gerenciamento_de_filmes_Consulta_View_Model> lista = new List<Gerenciamento_de_filmes_Consulta_View_Model>();
+
+            try
+            {
+                Gerenciamento_de_filmes_Repository rep = new Gerenciamento_de_filmes_Repository();
+                foreach (Gerenciamento_de_filmes gf in rep.FindAll())
+                {
+                    Gerenciamento_de_filmes_Consulta_View_Model model = new Gerenciamento_de_filmes_Consulta_View_Model();
+                    model.Titulo = gf.Titulo;
+                    model.Descricao = gf.Descricao;
+                    model.imagem = gf.Imagem;
+                    model.Duracao = gf.Duracao;
+
+                    lista.Add(model);
+
+                }
+            }
+            catch (Exception e)
+            {
+
+                ViewBag.Message = "Erro: " + e.Message;
+            }
+
+            return View(lista);
+        }
     }
 }

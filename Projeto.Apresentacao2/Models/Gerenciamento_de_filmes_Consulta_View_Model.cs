@@ -10,7 +10,7 @@ namespace Projeto.Apresentacao2.Models
         public int Id { get; set; }
         public string Titulo { get; set; }
         public string Descricao { get; set; }
-        public TimeSpan Duracao { get; set; }
+        public int Duracao { get; set; }
         public string imagem { get; set; }
 
     }

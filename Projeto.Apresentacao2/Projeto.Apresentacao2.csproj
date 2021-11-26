@@ -104,11 +104,18 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Forms\ActionCadastroFilme.aspx" />
     <Content Include="Forms\ConFilmeAlterar.aspx" />
+    <Content Include="Forms\ConFilmeExcluir.aspx" />
     <Content Include="Forms\ControllerPortal.aspx" />
+    <Content Include="Forms\DeleteFilme.aspx" />
     <Content Include="Forms\Portal.aspx" />
     <Content Include="Forms\ResConFilmeAlt.aspx" />
+    <Content Include="Forms\UpdateFilme.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Imagem\assentos.ingresso.png" />
+    <Content Include="Imagem\download %283%29.jpg" />
     <Content Include="Imagem\download %284%29.jpg" />
+    <Content Include="Imagem\download %285%29.jpg" />
+    <Content Include="Imagem\download %286%29.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -122,6 +129,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\FilmeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SalaController.cs" />
     <Compile Include="Forms\ActionCadastroFilme.aspx.cs">
       <DependentUpon>ActionCadastroFilme.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -136,12 +144,26 @@
     <Compile Include="Forms\ConFilmeAlterar.aspx.designer.cs">
       <DependentUpon>ConFilmeAlterar.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ConFilmeExcluir.aspx.cs">
+      <DependentUpon>ConFilmeExcluir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ConFilmeExcluir.aspx.designer.cs">
+      <DependentUpon>ConFilmeExcluir.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ControllerPortal.aspx.cs">
       <DependentUpon>ControllerPortal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Forms\ControllerPortal.aspx.designer.cs">
       <DependentUpon>ControllerPortal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeleteFilme.aspx.cs">
+      <DependentUpon>DeleteFilme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\DeleteFilme.aspx.designer.cs">
+      <DependentUpon>DeleteFilme.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Portal.aspx.cs">
       <DependentUpon>Portal.aspx</DependentUpon>
@@ -156,6 +178,13 @@
     </Compile>
     <Compile Include="Forms\ResConFilmeAlt.aspx.designer.cs">
       <DependentUpon>ResConFilmeAlt.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UpdateFilme.aspx.cs">
+      <DependentUpon>UpdateFilme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateFilme.aspx.designer.cs">
+      <DependentUpon>UpdateFilme.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -193,6 +222,12 @@
     <Content Include="Views\Filme\Cadastro.cshtml" />
     <Content Include="Views\Home\CadastroSucessoFilme.cshtml" />
     <Content Include="Views\Home\CadastroErroFilme.cshtml" />
+    <Content Include="Views\Home\EditarSucessoFilme.cshtml" />
+    <Content Include="Views\Home\EditarErroFilme.cshtml" />
+    <Content Include="Views\Home\ExcluirSucessoFilme.cshtml" />
+    <Content Include="Views\Home\ExcluirErroFilme.cshtml" />
+    <Content Include="Views\Filme\Consulta.cshtml" />
+    <Content Include="Views\Sala\Cadastro.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

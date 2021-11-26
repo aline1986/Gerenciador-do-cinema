@@ -23,7 +23,7 @@
 <br /><br /><br /><br />
 <h2 style="margin-left: 25px">Fazendo a Alteração dos dados do Filme</h2>
 <hr />
-<form id="form1" action="#" runat="server" style="margin-left: 50px">
+<form id="form1" action="UpdateFilme.aspx" runat="server" style="margin-left: 50px">
         <div>
                 <%@Import Namespace="System.Data"  %>
                 <%@Import Namespace="System.Data.SqlClient"  %>
@@ -73,9 +73,6 @@
                                             <br /><br />
                                         <label><font face="arial" size="3">Duração:</font></label>
                                         <input type="number" min="0" max="3" name="Duracao" value="<%: gf.Duracao %>" class="form-control" /> 
-                                            <br /><br />
-                                        <label><font face="arial" size="3">Imagem:</font></label>
-                                        <input type="file" name="Imagem" class="btn-success btn-sm" value="<%: gf.Imagem %>" />
                                             <br /><br />
                                         <input type="submit" value="Editar Filme" class="btn-primary btn-sm" />
                                              </div>

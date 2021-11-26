@@ -1,0 +1,143 @@
+﻿
+@{
+    ViewBag.Title = "Consulta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Consulta de Filmes</h2>
+
+<hr />
+
+<style>
+    produto {
+        width: 500em;
+        height: 700em;
+    }
+
+    th {
+        text-align: center;
+        height: 3em;
+        font-family: Arial;
+        font-size: 1em;
+    }
+
+    td {
+        text-align: center;
+        font-family: Arial;
+        font-size: 1em;
+    }
+
+    estoque {
+        text-align: center;
+        height: 3em;
+        font-family: Arial;
+        font-size: 1em;
+        width: 178em;
+    }
+
+    p {
+        color: blue;
+    }
+
+    img {
+        width: 8em;
+    }
+</style>
+<script>
+    function comprar(i) {
+        var compra = document.querySelector('#compra').value
+        var valorCompra = 0
+        if (i == i) {
+            valorCompra = i * compra
+        } else {
+            valorCompra += i
+        }
+
+        if (compra == compra) {
+            valorCompra = i * compra
+        } else {
+            valorCompra = i + i
+        }
+
+        var html = ""
+        html += "<p> Valor Compra: R$ " + valorCompra + " <br />"
+        html += "Quantidade: " + compra + "</p>"
+        var valor = document.getElementById("valor")
+        valor.innerHTML = html
+    }
+</script>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+         @*Links do Layout*@
+    </div>
+    <br />
+    <table border align="right" bgcolor="black">
+        <tr bgcolor="white">
+            <td><font face="arial" size="3">@DateTime.Now.DayOfWeek - @DateTime.Now.Day / @DateTime.Now.Month / @DateTime.Now.Year  @DateTime.Now.Hour : @DateTime.Now.Minute Hrs</font></td>
+        </tr>
+    </table>
+    @*Relogio da Pagina*@
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav"></ul>
+    </div>
+</div>
+
+@*Layout da Pagina*@
+
+<br />
+@*Titulo da Pagina*@
+@model List<Projeto.Apresentacao2.Models.Gerenciamento_de_filmes_Consulta_View_Model>
+@*Model da Pagina*@
+<div>
+    <strong><font face="arial" size="3" color="red">@ViewBag.Message</font></strong>
+</div>
+
+
+
+<br />
+@*Aviso da Pagina*@
+<p id="valor" />
+<table class="produto" align="center" width="900px" cellpadding="1" cellspacing="0" border="2">
+    @*Inicializacao da tabela de resultado*@
+    <thead align="center">
+        <tr bgcolor="gray" align="center">
+            @*Inicializacao do Campo Titulo da Tabela Resultado*@
+            <th>Título</th>
+
+            <th width="450px">Descrição</th>
+            @*Titulo Nome do Lanche*@
+            <th>Duração</th>
+            @*Titulo Preco do Lanche*@
+            <th>Imagem</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                
+                <td>@item.Titulo</td>
+                <td width="450px" height="100px">@item.Descricao</td>
+                <td>@item.Duracao</td>
+               
+                <td> <img src="~/Imagem/@item.imagem" /></td>
+                
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="11" bgcolor="light-gray">
+                <font face="arial" size="3" color="black">Quantidade de Filmes: @Model.Count</font>
+            </td>
+            @*Contador da Pagina*@
+        </tr>
+    </tfoot>
+</table>
+

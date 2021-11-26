@@ -16,7 +16,7 @@ namespace Projeto.DAL
             OpenConnection();
             /// Abre a Conexao
             string query = "INSERT INTO Lista_de_salas (Nome, QuantidadeDeAssentos, ImagemSala)" +
-                " VALUES (@Nome, @QuantidadeDeAssentos, @ImagemSala')";
+                " VALUES (@Nome, @QuantidadeDeAssentos, 'assentos.ingresso.png')";
 
             // Conversa com a Base
             com = new SqlCommand(query, con);
@@ -25,9 +25,7 @@ namespace Projeto.DAL
             /// Nome
             com.Parameters.AddWithValue("@QuantidadeDeAssentos", L.QuantidadeDeAssentos);
             /// Campo QuantidadeDeAssentos
-            com.Parameters.AddWithValue("@ImagemSala", L.ImagemSala);
-            /// ImagemSala
-
+            
 
             com.ExecuteNonQuery();
             /// Roda a Querie
