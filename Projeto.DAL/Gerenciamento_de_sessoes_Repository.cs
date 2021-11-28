@@ -117,9 +117,9 @@ namespace Projeto.DAL
          /// Campo Id
          G.Data = Convert.ToDateTime(dr["Data"]);
         /// Campo Data
-         G.Horario_de_inicio = (TimeSpan)dr["Horario_de_inicio"];
+         G.Horario_de_inicio = Convert.ToInt32(dr["Horario_de_inicio"]);
         /// Horario_de_inicio
-         G.Horario_de_fim = (TimeSpan)dr["Horario_de_fim"];
+         G.Horario_de_fim = Convert.ToInt32(dr["Horario_de_fim"]);
          /// Horario_de_fim
          G.Valor_do_ingresso = Convert.ToDouble(dr["Valor_do_ingresso"]);
          /// Campo Valor_do_ingresso
@@ -156,9 +156,9 @@ namespace Projeto.DAL
                 /// Campo Codigo
                 G.Data = Convert.ToDateTime(dr["Data"]);
                 /// Campo Data
-                G.Horario_de_inicio = (TimeSpan)(dr["Horario_de_inicio"]);
+                G.Horario_de_inicio = Convert.ToInt32(dr["Horario_de_inicio"]);
                 /// Campo Horario_de_inicio
-                G.Horario_de_fim = (TimeSpan)(dr["Horario_de_fim"]);
+                G.Horario_de_fim = Convert.ToInt32(dr["Horario_de_fim"]);
                 /// Campo Horario_de_fim
                 G.Valor_do_ingresso = Convert.ToDouble(dr["Valor_do_ingresso"]);
                 /// Campo Valor_do_ingresso

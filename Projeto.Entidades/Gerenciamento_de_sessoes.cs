@@ -13,13 +13,14 @@ namespace Projeto.Entidades
         /// </summary>
         public int Id { get; set; }
         public DateTime Data { get; set; }
-        public TimeSpan Horario_de_inicio { get; set; }
-        public TimeSpan Horario_de_fim { get; set; }
+        public int Horario_de_inicio { get; set; }
+        public int Horario_de_fim { get; set; }
         public double Valor_do_ingresso { get; set; }
         public string Tipo_de_animacao { get; set; }
         public string Tipo_de_audio { get; set; }
         public int Id_sala { get; set; }
         public int Id_filme { get; set; }
+        public int Duracao { get; set; }
 
         /// <summary>
         /// Construtores
@@ -29,7 +30,7 @@ namespace Projeto.Entidades
 
         }
 
-        public Gerenciamento_de_sessoes(int id, DateTime data, TimeSpan horario_de_inicio, TimeSpan horario_de_fim,
+        public Gerenciamento_de_sessoes(int id, DateTime data, int horario_de_inicio, int horario_de_fim,
          double valor_do_ingresso, string tipo_de_animação, string tipo_de_audio,int id_sala, int id_filme)
         {
             Id = id;

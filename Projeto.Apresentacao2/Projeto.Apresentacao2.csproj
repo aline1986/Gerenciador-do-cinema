@@ -103,22 +103,29 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Forms\ActionCadastroFilme.aspx" />
+    <Content Include="Forms\ActionCadastroSessao.aspx" />
     <Content Include="Forms\ConAltSala.aspx" />
     <Content Include="Forms\ConExcSala.aspx" />
     <Content Include="Forms\ConFilmeAlterar.aspx" />
     <Content Include="Forms\ConFilmeAltImg.aspx" />
     <Content Include="Forms\ConFilmeExcluir.aspx" />
     <Content Include="Forms\ConSala.aspx" />
+    <Content Include="Forms\ConSessaoExc.aspx" />
     <Content Include="Forms\ControllerPortal.aspx" />
     <Content Include="Forms\DeleteFilme.aspx" />
     <Content Include="Forms\DeleteSala.aspx" />
+    <Content Include="Forms\DeleteSessao.aspx" />
+    <Content Include="Forms\InsertSessao.aspx" />
     <Content Include="Forms\Portal.aspx" />
     <Content Include="Forms\RescomSalaAlt.aspx" />
     <Content Include="Forms\ResConFilmeAlt.aspx" />
     <Content Include="Forms\ResConFilmeAltImg.aspx" />
+    <Content Include="Forms\ConViewSessaoFilmeSala.aspx" />
+    <Content Include="Forms\ResConSessaoAlt.aspx" />
     <Content Include="Forms\UpdateFilme.aspx" />
     <Content Include="Forms\UpdateFilmeImg.aspx" />
     <Content Include="Forms\UpDateSala.aspx" />
+    <Content Include="Forms\UpdateSessao.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Imagem\assentos.ingresso.png" />
     <Content Include="Imagem\download %283%29.jpg" />
@@ -146,6 +153,13 @@
     </Compile>
     <Compile Include="Forms\ActionCadastroFilme.aspx.designer.cs">
       <DependentUpon>ActionCadastroFilme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ActionCadastroSessao.aspx.cs">
+      <DependentUpon>ActionCadastroSessao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ActionCadastroSessao.aspx.designer.cs">
+      <DependentUpon>ActionCadastroSessao.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\ConAltSala.aspx.cs">
       <DependentUpon>ConAltSala.aspx</DependentUpon>
@@ -189,6 +203,13 @@
     <Compile Include="Forms\ConSala.aspx.designer.cs">
       <DependentUpon>ConSala.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ConSessaoExc.aspx.cs">
+      <DependentUpon>ConSessaoExc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ConSessaoExc.aspx.designer.cs">
+      <DependentUpon>ConSessaoExc.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ControllerPortal.aspx.cs">
       <DependentUpon>ControllerPortal.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -209,6 +230,20 @@
     </Compile>
     <Compile Include="Forms\DeleteSala.aspx.designer.cs">
       <DependentUpon>DeleteSala.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeleteSessao.aspx.cs">
+      <DependentUpon>DeleteSessao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\DeleteSessao.aspx.designer.cs">
+      <DependentUpon>DeleteSessao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InsertSessao.aspx.cs">
+      <DependentUpon>InsertSessao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\InsertSessao.aspx.designer.cs">
+      <DependentUpon>InsertSessao.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Portal.aspx.cs">
       <DependentUpon>Portal.aspx</DependentUpon>
@@ -238,6 +273,20 @@
     <Compile Include="Forms\ResConFilmeAltImg.aspx.designer.cs">
       <DependentUpon>ResConFilmeAltImg.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ConViewSessaoFilmeSala.aspx.cs">
+      <DependentUpon>ConViewSessaoFilmeSala.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ConViewSessaoFilmeSala.aspx.designer.cs">
+      <DependentUpon>ConViewSessaoFilmeSala.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ResConSessaoAlt.aspx.cs">
+      <DependentUpon>ResConSessaoAlt.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ResConSessaoAlt.aspx.designer.cs">
+      <DependentUpon>ResConSessaoAlt.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\UpdateFilme.aspx.cs">
       <DependentUpon>UpdateFilme.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -258,6 +307,13 @@
     </Compile>
     <Compile Include="Forms\UpDateSala.aspx.designer.cs">
       <DependentUpon>UpDateSala.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UpdateSessao.aspx.cs">
+      <DependentUpon>UpdateSessao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateSessao.aspx.designer.cs">
+      <DependentUpon>UpdateSessao.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -308,6 +364,12 @@
     <Content Include="Views\Home\ExcluirSucessoSala.cshtml" />
     <Content Include="Views\Home\ExcluirErroSala.cshtml" />
     <Content Include="Views\Usuario\Cadastro.cshtml" />
+    <Content Include="Views\Home\CadastroSucessoSessao.cshtml" />
+    <Content Include="Views\Home\CadastroErroSessao.cshtml" />
+    <Content Include="Views\Home\EditarSucessoSessao.cshtml" />
+    <Content Include="Views\Home\EditarErroSessao.cshtml" />
+    <Content Include="Views\Home\ExcluirSucessoSessao.cshtml" />
+    <Content Include="Views\Home\ExcluirErroSessao.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

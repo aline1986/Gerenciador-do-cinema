@@ -89,5 +89,35 @@ namespace Projeto.Apresentacao2.Controllers
         {
             return View();
         }
+
+        public ActionResult CadastroSucessoSessao()
+        {
+            return View();
+        }
+
+        public ActionResult CadastroErroSessao()
+        {
+            return View();
+        }
+
+        public ActionResult EditarSucessoSessao()
+        {
+            return View();
+        }
+
+        public ActionResult EditarErroSessao()
+        {
+            return View();
+        }
+
+        public ActionResult ExcluirSucessoSessao()
+        {
+            return View();
+        }
+
+        public ActionResult ExcluirErroSessao()
+        {
+            return View();
+        }
     }
 }
