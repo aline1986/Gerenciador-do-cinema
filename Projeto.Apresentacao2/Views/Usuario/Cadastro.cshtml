@@ -1,0 +1,64 @@
+﻿
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a href="~/Forms/Portal.aspx" class="navbar-brand">Voltar</a>
+
+        </div>
+        <br />
+        <table align="right">
+            <tr>
+                <td><font color="White" face="arial" size="3">@DateTime.Now.DayOfWeek - @DateTime.Now.Day / @DateTime.Now.Month / @DateTime.Now.Year  @DateTime.Now.Hour : @DateTime.Now.Minute Hrs</font></td>
+            </tr>
+        </table>
+        @*Relogio da Pagina*@
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav"></ul>
+        </div>
+    </div>
+</div>
+@*Layout da Pagina*@
+<h2>Cadastro de Usuário(a)</h2>
+<div class="container body-content">
+    @*@RenderBody()*@
+    <hr />
+    @*Renderizacao*@
+    <br />
+
+    @model Projeto.Apresentacao2.Models.Usuario_Cadastro_View_Model
+    @*Model da Pagina*@
+    @using (Html.BeginForm())
+    {
+        @*Formulario*@
+        <div class="row">
+            <div class="col-md-4">
+                <label><font face="arial" size="3">Nome:</font></label>
+                @Html.TextBoxFor(model => model.Login, new { @Class = "form-control" })
+                @*Campo Nome do Lanche*@
+                <br /><br />
+                <label><font face="arial" size="3">Senha:</font></label>
+                @Html.PasswordFor(model => model.Senha, new { @Class = "form-control" })
+                @*Campo Preco do Lanche*@
+                <br /><br />
+                <input type="submit" class="btn btn-primary btn-sm" value="Cadastrar Usuário(a)" />
+                @*Botao de Cadastro do Lanche*@
+                <hr />
+
+                <strong><font face="arial" size="3" color="green">@ViewBag.Message</font></strong>
+                @*Aviso da Pagina*@
+                <strong><font face="arial" size="3" color="red">@ViewBag.MessageErro</font></strong>
+            </div>
+        </div>
+    }
+    </div>
+    
+@*Ano da Atuacao da Pagina*@
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+

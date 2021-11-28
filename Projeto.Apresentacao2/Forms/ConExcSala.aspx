@@ -31,7 +31,7 @@
 
     </div>
 <br /><br /><br /><br />
-<strong><font face="arial" size="6">Listagem de Filmes</font></strong>
+<strong><font face="arial" size="6">Listagem de salas</font></strong>
 <br /><br />
 <hr />
 <script>
@@ -44,6 +44,11 @@
         var sala = document.getElementById("sala")
 
         sala.innerHTML = html
+    }
+
+    function Confirmar()
+    {
+        confirm('Deseja excluir a sala ?');
     }
 </script>
 <center><p id="sala" /></center>
@@ -75,7 +80,7 @@
                         <th bgcolor="gray">
                             <td bgcolor="gray"><strong><center>Nome da Sala</center></strong></td>
                             <td bgcolor="gray"><strong><center>Quantidade de Assentos</center></strong></td>
-                            <td bgcolor="gray"><strong><center>Mostrar Imagem da Sala</center></strong></td>
+                            <td bgcolor="gray"><strong><center>Encoste ou clique para mostrar Imagem da sala</center></strong></td>
                             <td bgcolor="gray"><strong><center>Excluir</center></strong></td>
                         </th>
                     <%while (dr.Read())
@@ -91,12 +96,13 @@
                         /// Codigo do(a) Usuario(a) Administrador(a)
                             %>
                             <tr>
-                                <td></td>
+                              <td></td>  
                                <td><center><%: ls.Nome %></center></td>
                                 <td><center><%: ls.QuantidadeDeAssentos %></center></td> 
-                                <td><center><button onmousemove="MostrarIagem()" btn></button></center></td>
-                                <td><center><a href="#?Id=<%: ls.Id %>" class="btn-danger btn-sm">x</a></center></td>
-                            </tr>
+                                <td><center><button onmousemove="MostrarIagem()" class="btn-primary btn-sm" >Clique</button></center></td>
+                                <td><center><a href="DeleteSala.aspx?Id=<%: ls.Id %>" onclick="Confirmar()" class="btn-danger btn-sm">x</a></center></td>
+                              
+                                </tr>
                         <% } %>
                     
                    

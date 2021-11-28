@@ -69,5 +69,25 @@ namespace Projeto.Apresentacao2.Controllers
         {
             return View();
         }
+
+        public ActionResult EditarSucessoSala()
+        {
+            return View();
+        }
+
+        public ActionResult EditarErrooSala()
+        {
+            return View();
+        }
+
+        public ActionResult ExcluirSucessoSala()
+        {
+            return View();
+        }
+
+        public ActionResult ExcluirErroSala()
+        {
+            return View();
+        }
     }
 }

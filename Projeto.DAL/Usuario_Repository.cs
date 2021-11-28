@@ -16,7 +16,7 @@ namespace Projeto.DAL
             OpenConnection();
             /// Abre a Conexao
             string query = "INSERT INTO Usuario (Login, Senha)" +
-                " VALUES (@Login, @Senha')";
+                " VALUES (@Login, @Senha)";
 
             // Conversa com a Base
             com = new SqlCommand(query, con);
