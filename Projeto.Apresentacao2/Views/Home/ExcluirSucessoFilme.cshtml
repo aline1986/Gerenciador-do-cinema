@@ -1,8 +1,29 @@
 ﻿
-@{
-    ViewBag.Title = "ExcluirSucessoFilme";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../Home/Logado" class="navbar-brand">Voltar</a>
+        </div>
+        <br />
+        <table align="right">
+            <tr>
+                <td><font color="White" face="arial" size="3">@DateTime.Now.DayOfWeek - @DateTime.Now.Day / @DateTime.Now.Month / @DateTime.Now.Year  @DateTime.Now.Hour : @DateTime.Now.Minute Hrs</font></td>
+            </tr>
+        </table>
+        @*Relogio da Pagina*@
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav"></ul>
+        </div>
+    </div>
+</div>
+
 
 <h2><font color="green">Filme Excluído com Sucesso</font></h2>
 
+<hr />
+<center><img src="https://clinicacanto.com.br/uploads//x1492619779-.jpg.pagespeed.ic.o-OopzI7Tp.jpg" width="650px" height="280px" /></center>

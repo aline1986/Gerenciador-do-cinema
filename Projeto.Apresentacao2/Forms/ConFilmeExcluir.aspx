@@ -18,6 +18,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                <a href="../Home/Logado" class="navbar-brand">Voltar</a>
                </div>
             <br />
             
@@ -67,25 +68,28 @@
                     <table border style="margin-left: 150px" width="900px" height="300px">
                         <th bgcolor="gray">
                             <td bgcolor="gray"><strong><center>Título</center></strong></td>
+                            <td bgcolor="gray"><strong><center>Descrição</center></strong></td>
                             <td bgcolor="gray"><strong><center>Duração</center></strong></td>
                             <td bgcolor="gray"><strong><center>Imagem do Filme</center></strong></td>
                             <td bgcolor="gray"><strong><center>Excluir</center></strong></td>
                         </th>
                     <%while (dr.Read())
-                    {
+                        {
 
-                        Gerenciamento_de_filmes gf = new Gerenciamento_de_filmes();
+                            Gerenciamento_de_filmes gf = new Gerenciamento_de_filmes();
 
-                        gf.Id = Convert.ToInt32(dr["Id"]);
-                        gf.Titulo = dr["Titulo"].ToString();
-                        gf.Duracao = Convert.ToInt32(dr["Duracao"]);
-                        gf.Imagem = dr["Imagem"].ToString();
-                        
-                        /// Codigo do(a) Usuario(a) Administrador(a)
+                            gf.Id = Convert.ToInt32(dr["Id"]);
+                            gf.Titulo = dr["Titulo"].ToString();
+                            gf.Descricao = dr["Descricao"].ToString();
+                            gf.Duracao = Convert.ToInt32(dr["Duracao"]);
+                            gf.Imagem = dr["Imagem"].ToString();
+
+                            /// Codigo do(a) Usuario(a) Administrador(a)
                             %>
                             <tr>
                                 <td></td>
                                <td><center><%: gf.Titulo %></center></td>
+                                <td><center><%: gf.Descricao %></center></td>
                                 <td><center><%: gf.Duracao %></center></td> 
                                 <td><center><img src=" <%: "../Imagem/" + gf.Imagem %>" width="155px" /></center></td>
                                 <td><center><a href="DeleteFilme.aspx?Id=<%: gf.Id%>" onclick="Excluir()" class="btn-danger btn-sm"  ">O</a></center></td>

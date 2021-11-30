@@ -20,7 +20,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a href="../Home/Index" class="navbar-brand">Voltar</a>
-                <a href="../Usuario/Cadastro" style="margin-left: 50px" class="navbar-brand">Cadastrar</a>
+               
                </div>
             <br />
             
