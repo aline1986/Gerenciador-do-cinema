@@ -21,6 +21,12 @@ namespace Projeto.Entidades
         public int Id_sala { get; set; }
         public int Id_filme { get; set; }
         public int Duracao { get; set; }
+        public int Horario_de_inicio_Minuto { get; set; }
+        public int Horario_de_Inicio_Segundo { get; set; }
+        public int Horario_de_fim_Minuto { get; set; }
+        public int Horario_de_fim_Segundo { get; set; }
+        public int Duracao_Minuto { get; set; }
+        public int Duracao_Segundo { get; set; }
 
         /// <summary>
         /// Construtores
@@ -31,7 +37,9 @@ namespace Projeto.Entidades
         }
 
         public Gerenciamento_de_sessoes(int id, DateTime data, int horario_de_inicio, int horario_de_fim,
-         double valor_do_ingresso, string tipo_de_animação, string tipo_de_audio,int id_sala, int id_filme)
+         double valor_do_ingresso, string tipo_de_animação, string tipo_de_audio,int id_sala, int id_filme,
+         int horario_de_inicio_Minuto, int horario_de_Inicio_Segundo, int horario_de_fim_Minuto, 
+         int horario_de_fim_Segundo, int duracao_Minuto, int duracao_Segundo)
         {
             Id = id;
             Data = data;
@@ -42,7 +50,12 @@ namespace Projeto.Entidades
             Tipo_de_audio = tipo_de_audio;
             Id_sala = id_sala;
             Id_filme = id_filme;
-
+            Horario_de_inicio_Minuto = horario_de_inicio_Minuto;
+            Horario_de_Inicio_Segundo = horario_de_fim_Segundo;
+            Horario_de_fim_Minuto = horario_de_fim_Minuto;
+            Horario_de_fim_Segundo = horario_de_fim_Segundo;
+            Duracao_Minuto = duracao_Minuto;
+            Duracao_Segundo = duracao_Segundo;
         }
 
 

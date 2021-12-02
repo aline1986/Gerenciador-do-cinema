@@ -23,13 +23,17 @@ namespace Projeto.Entidades
         public string TipoAnimacaoFilme { get; set; }
         public string TipoAudio { get; set; }
         public double Valor { get; set; }
+        public int Horario_de_inicio_Minuto { get; set; }
+        public int Horario_de_inicio_Segundo { get; set; }
+        public int DuracaoMinuto { get; set; }
+        public int DuracaoSegundo { get; set; }
 
         public VW_Sessao_Filme_Sala()
         {
 
         }
 
-        public VW_Sessao_Filme_Sala(int id_Sessao, int id_Filme, int id_Sala, string nomeFilme, string descricaoFilme, int duracaoFilme, string imagemFilme, string nomeSala, int quantidadeDeAssentosSala, DateTime diaFilme, int horarioInicioFilme, int horarioFimFilme, string tipoAnimacaoFilme, string tipoAudio, double valor)
+        public VW_Sessao_Filme_Sala(int id_Sessao, int id_Filme, int id_Sala, string nomeFilme, string descricaoFilme, int duracaoFilme, string imagemFilme, string nomeSala, int quantidadeDeAssentosSala, DateTime diaFilme, int horarioInicioFilme, int horarioFimFilme, string tipoAnimacaoFilme, string tipoAudio, double valor, int horario_de_inicio_Minuto, int horario_de_inicio_Segundo, int duracaoMinuto, int duracaoSegundo)
         {
             Id_Sessao = id_Sessao;
             Id_Filme = id_Filme;
@@ -46,6 +50,10 @@ namespace Projeto.Entidades
             TipoAnimacaoFilme = tipoAnimacaoFilme;
             TipoAudio = tipoAudio;
             Valor = valor;
+            Horario_de_inicio_Minuto = horario_de_inicio_Minuto;
+            Horario_de_inicio_Segundo = horario_de_inicio_Segundo;
+            DuracaoMinuto = duracaoMinuto;
+            DuracaoSegundo = duracaoSegundo;
         }
 
         public override string ToString()

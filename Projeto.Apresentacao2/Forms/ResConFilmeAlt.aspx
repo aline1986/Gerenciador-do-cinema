@@ -12,7 +12,7 @@
                 <span class="icon-bar"></span>  
             </button>
            
-           
+                    <a href="../Home/Logado" class="navbar-brand">Voltar</a>           
         </div>
         <br />
         <div class="navbar-collapse collapse">
@@ -49,17 +49,19 @@
             
                     
                     <%if (dr.Read())
-                    {
+                        {
 
-                        Gerenciamento_de_filmes gf = new Gerenciamento_de_filmes();
+                            Gerenciamento_de_filmes gf = new Gerenciamento_de_filmes();
 
-                        gf.Id = Convert.ToInt32(dr["Id"]);
-                        gf.Titulo = dr["Titulo"].ToString();
-                        gf.Duracao = Convert.ToInt32(dr["Duracao"]);
+                            gf.Id = Convert.ToInt32(dr["Id"]);
+                            gf.Titulo = dr["Titulo"].ToString();
+                            gf.Duracao = Convert.ToInt32(dr["Duracao"]);
+                            gf.DuracaoMinuto = Convert.ToInt32(dr["DuracaoMinuto"]);
+                            gf.DuracaoSegundo = Convert.ToInt32(dr["DuracaoSegundo"]);
                             gf.Descricao = dr["Descricao"].ToString();
-                        gf.Imagem = dr["Imagem"].ToString();
-                        
-                        /// Codigo do(a) Usuario(a) Administrador(a)
+                            gf.Imagem = dr["Imagem"].ToString();
+
+                            /// Codigo do(a) Usuario(a) Administrador(a)
                             %>
                                 <input type="hidden" name="Id" value="<%: gf.Id %>" class="form-control" />
                                 <div class="row" style="margin-left: 25px">
@@ -71,8 +73,14 @@
                                         <label><font face="arial" size="3">Descrição:</font></label>
                                             <textarea name="Descricao"  class="form-control"><%: gf.Descricao %></textarea>
                                             <br /><br />
-                                        <label><font face="arial" size="3">Duração:</font></label>
+                                        <label><font face="arial" size="3">Duração em Hora(s):</font></label>
                                         <input type="number" min="0" max="3" name="Duracao" value="<%: gf.Duracao %>" class="form-control" /> 
+                                            <br /><br />
+                                        <label><font face="arial" size="3">Duração em Minuto(s):</font></label>
+                                        <input type="number" min="0" max="59" name="DuracaoMinuto" value="<%: gf.DuracaoMinuto %>" class="form-control" /> 
+                                            <br /><br />
+                                        <label><font face="arial" size="3">Duração em Segundos(s):</font></label>
+                                        <input type="number" min="0" max="59" name="DuracaoSegundo" value="<%: gf.DuracaoSegundo %>" class="form-control" /> 
                                             <br /><br />
                                         <input type="submit" value="Editar Filme" class="btn-primary btn-sm" />
                                              </div>

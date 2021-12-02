@@ -61,30 +61,49 @@
             
                     <table border style="margin-left: 150px" width="900px" height="300px">
                         <th bgcolor="gray">
-                            <td bgcolor="gray"><strong><center>Título</center></strong></td>
+                            <td bgcolor="gray" width="150px"><strong><center>Título</center></strong></td>
                             <td bgcolor="gray"><strong><center>Descrição</center></strong></td>
-                            <td bgcolor="gray"><strong><center>Duração</center></strong></td>
+                            <td bgcolor="gray" width="300px"><strong><center>Duração</center></strong></td>
                             <td bgcolor="gray"><strong><center>Imagem do Filme</center></strong></td>
                             <td bgcolor="gray"><strong><center>Editar</center></strong></td>
                         </th>
                     <%while (dr.Read())
-                    {
+                        {
 
-                        Gerenciamento_de_filmes gf = new Gerenciamento_de_filmes();
+                            Gerenciamento_de_filmes gf = new Gerenciamento_de_filmes();
 
-                        gf.Id = Convert.ToInt32(dr["Id"]);
-                        gf.Titulo = dr["Titulo"].ToString();
-                        gf.Descricao = dr["Descricao"].ToString();     
-                        gf.Duracao = Convert.ToInt32(dr["Duracao"]);
-                        gf.Imagem = dr["Imagem"].ToString();
-                        
-                        /// Codigo do(a) Usuario(a) Administrador(a)
+                            gf.Id = Convert.ToInt32(dr["Id"]);
+                            gf.Titulo = dr["Titulo"].ToString();
+                            gf.Descricao = dr["Descricao"].ToString();
+                            gf.Duracao = Convert.ToInt32(dr["Duracao"]);
+                            gf.DuracaoMinuto = 0;
+                            gf.DuracaoSegundo = 0;
+                            gf.Imagem = dr["Imagem"].ToString();
+                            if(Convert.ToInt32(dr["DuracaoMinuto"]) == null)
+                            {
+                                gf.DuracaoMinuto = 0;
+                            }
+                            else
+                            {
+                                gf.DuracaoMinuto = Convert.ToInt32(dr["DuracaoMinuto"]);
+                            }
+
+                            if(Convert.ToInt32(dr["DuracaoSegundo"]) == null)
+                            {
+                                gf.DuracaoSegundo = 0;
+                            }
+                            else
+                            {
+                                gf.DuracaoSegundo = Convert.ToInt32(dr["DuracaoSegundo"]);
+                            }
+
+                            /// Codigo do(a) Usuario(a) Administrador(a)
                             %>
                             <tr>
                                 <td></td>
                                <td><center><%: gf.Titulo %></center></td>
-                                <td><center><%: gf.Descricao %></center></td>
-                                <td><center><%: gf.Duracao %></center></td> 
+                                <td height="300px" width="300px"><center><%: gf.Descricao %></center></td>
+                                <td><center><%: gf.Duracao %> Hora(s) <%: gf.DuracaoMinuto %> Minuto(s) e <%: gf.DuracaoSegundo%> Segundo(s)</center></td> 
                                 <td><center><img src=" <%: "../Imagem/" + gf.Imagem %>" width="155px" /></center></td>
                                 <td><center><a href="ResConFilmeAlt.aspx?Id=<%: gf.Id%>" class="btn-primary btn-sm">Clique</a></center></td>
                             </tr>

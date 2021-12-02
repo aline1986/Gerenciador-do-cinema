@@ -1,8 +1,28 @@
-﻿@{
-                /**/
-                ViewBag.Title = "Cadastro";
-                Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a href="../Home/Logado" class="navbar-brand">Voltar</a>
+
+        </div>
+        <br />
+        <table align="right">
+            <tr>
+                <td><font color="White" face="arial" size="3">@DateTime.Now.DayOfWeek - @DateTime.Now.Day / @DateTime.Now.Month / @DateTime.Now.Year  @DateTime.Now.Hour : @DateTime.Now.Minute Hrs</font></td>
+            </tr>
+        </table>
+        @*Relogio da Pagina*@
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav"></ul>
+        </div>
+    </div>
+</div>
+
 <h2>Cadastro</h2>
 <hr />
 @model Projeto.Apresentacao2.Models.Gerenciamento_de_filmes_Cadastro_View_Model
@@ -19,11 +39,19 @@
             @*Campo Descricao*@
             <br /><br />
             <label><font face="arial" size="3">Duracao em Horas:</font></label>
-            <input type="number" name="Duracao" min="0" max="3" class="form-control" />
+            <input type="number" name="Duracao" min="0" max="3" value="0" class="form-control" />
             @*Campo Duracao*@
             <br /><br />
+            <label><font face="arial" size="3">Duracao em Minutos:</font></label>
+            <input type="number" name="DuracaoMinuto" min="0" max="59" value="0" class="form-control" />
+            @*Campo Duracao em Minutos*@
+            <br /><br />
+            <label><font face="arial" size="3">Duracao em Segundos:</font></label>
+            <input type="number" name="DuracaoSegundo" min="0" max="59" value="0" class="form-control" />
+            @*Campo Duracao em Minutos*@
+            <br /><br />
             <label><font face="arial" size="3">Imagem:</font></label>
-            <input type="file" name="Imagem" class="btn-success btn-sm"  />
+            <input type="file" name="Imagem" class="btn-success btn-sm" />
             <br /><br />
             <input type="submit" class="btn btn-primary btn-sm" value="Cadastrar filme" />
             @*Botao de Cadastro de filme*@

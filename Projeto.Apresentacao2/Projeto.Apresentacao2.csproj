@@ -127,6 +127,7 @@
     <Content Include="Forms\UpDateSala.aspx" />
     <Content Include="Forms\UpdateSessao.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="Imagem\365-Filmes-Banner-Blog-Dia-dos-Namorados.jpg" />
     <Content Include="Imagem\assentos.ingresso.png" />
     <Content Include="Imagem\download %283%29.jpg" />
     <Content Include="Imagem\download %284%29.jpg" />

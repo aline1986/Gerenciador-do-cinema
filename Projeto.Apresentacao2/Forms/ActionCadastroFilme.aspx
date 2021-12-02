@@ -24,6 +24,8 @@
                     gf.Descricao = Request.Form["Descricao"];
                     gf.Duracao = Convert.ToInt32(Request.Form["Duracao"]);
                     gf.Imagem =  Request.Form["Imagem"];
+                    gf.DuracaoMinuto = Convert.ToInt32(Request.Form["DuracaoMinuto"]);
+                    gf.DuracaoSegundo = Convert.ToInt32(Request.Form["DuracaoSegundo"]);
 
                     string img = "c:/" + gf.Imagem;
 
@@ -49,11 +51,11 @@
                     <%: gf.Imagem %> </script>
             <%
 
-                    SqlCommand com = new SqlCommand("INSERT INTO Gerenciamento_de_filmes(Titulo, Descricao, Duracao, " +
-                        "Imagem) VALUES ('" + gf.Titulo +"', '" + gf.Descricao + "', " + gf.Duracao + ", '" + gf.Imagem + "')", con);
-                     com.ExecuteReader();
-                    /// Conversa com a base
-                    /// 
+                SqlCommand com = new SqlCommand("INSERT INTO Gerenciamento_de_filmes(Titulo, Descricao, Duracao, " +
+                    "Imagem, DuracaoMinuto, DuracaoSegundo) VALUES ('" + gf.Titulo +"', '" + gf.Descricao + "', " + gf.Duracao + ", '" + gf.Imagem + "', " + gf.DuracaoMinuto + ", " + gf.DuracaoSegundo + ")", con);
+                com.ExecuteReader();
+                /// Conversa com a base
+                /// 
                     %>
             
                 <script>

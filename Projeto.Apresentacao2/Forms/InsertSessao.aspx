@@ -30,9 +30,16 @@
             <label style="margin-left: 50px"><font face="arial" size="3">Data da Sessão:</font></label>
             <input type="date" name="Data" style="margin-left: 50px" class="form-control" />
             <br /><br />
-            <label style="margin-left: 50px"><font face="arial" size="3">Horário de Início em Horas:</font></label>
-            <input type="number" name="Horario_de_inicio" min="0" max="23" style="margin-left: 50px" class="form-control" />
+            <label style="margin-left: 50px"><font face="arial" size="3">Horário de Início em Hora(s):</font></label>
+            <input type="number" name="Horario_de_inicio" min="0" max="23" value="0" style="margin-left: 50px" class="form-control" />
             <br /><br />
+            <label style="margin-left: 50px"><font face="arial" size="3">Horário de Início em Minuto(s):</font></label>
+            <input type="number" name="Horario_de_inicio_Minuto" min="0" max="59" value="0" style="margin-left: 50px" class="form-control" />
+            <br /><br />
+            <label style="margin-left: 50px"><font face="arial" size="3">Horário de Início em Segundo(s):</font></label>
+            <input type="number" name="Horario_de_inicio_Segundo" min="0" max="59" value="0" style="margin-left: 50px" class="form-control" />
+            <br /><br />
+            
             <label style="margin-left: 50px"><font face="arial" size="3">Valor do Ingresso:</font></label>
                    <br /> <table style="margin-left:50px" width="500px"><tr><td>R$:</td><td> <input type="number" min="0.00" max="100000000000.00" name="Valor_do_Ingresso" class="form-control"/></div></td></tr></table>
             <br /><br />
@@ -128,18 +135,21 @@
                     
                     <%
 
-    if(dr2.Read())
-    {
+                        if(dr2.Read())
+                        {
 
-        
 
-        
-        gf.Duracao = Convert.ToInt32(dr2["Duracao"]);
 
-        if (gf.Duracao != null)
-        {
+
+                            gf.Duracao = Convert.ToInt32(dr2["Duracao"]);
+                            gf.DuracaoMinuto = Convert.ToInt32(dr2["DuracaoMinuto"]);
+                            gf.DuracaoSegundo = Convert.ToInt32(dr2["DuracaoSegundo"]);
+                            if (gf.Duracao != null && gf.DuracaoMinuto != null && gf.DuracaoSegundo != null)
+                            {
 
                             %><input type="hidden" name="Duracao" value = "<%: gf.Duracao %>"/>
+                                <input type="hidden" name="DuracaoMinuto" value = "<%: gf.DuracaoMinuto %>"/>
+                                <input type="hidden" name="DuracaoSegundo" value = "<%: gf.DuracaoSegundo %>"/>
                    
                   <%   }else{
         }

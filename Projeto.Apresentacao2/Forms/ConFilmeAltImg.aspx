@@ -61,6 +61,7 @@
                     <table border style="margin-left: 150px" width="900px" height="300px">
                         <th bgcolor="gray">
                             <td bgcolor="gray"><strong><center>Título</center></strong></td>
+                            <td bgcolor="gray"><strong><center>Descrição</center></strong></td>
                             <td bgcolor="gray"><strong><center>Duração</center></strong></td>
                             <td bgcolor="gray"><strong><center>Imagem do Filme</center></strong></td>
                             <td bgcolor="gray"><strong><center>Editar</center></strong></td>
@@ -72,7 +73,10 @@
 
                         gf.Id = Convert.ToInt32(dr["Id"]);
                         gf.Titulo = dr["Titulo"].ToString();
+                        gf.Descricao = dr["Descricao"].ToString();
                         gf.Duracao = Convert.ToInt32(dr["Duracao"]);
+                        gf.DuracaoMinuto = Convert.ToInt32(dr["DuracaoMinuto"]);
+                        gf.DuracaoSegundo = Convert.ToInt32(dr["DuracaoSegundo"]);
                         gf.Imagem = dr["Imagem"].ToString();
                         
                         /// Codigo do(a) Usuario(a) Administrador(a)
@@ -80,7 +84,8 @@
                             <tr>
                                 <td></td>
                                <td><center><%: gf.Titulo %></center></td>
-                                <td><center><%: gf.Duracao %></center></td> 
+                                <td><center><%: gf.Descricao %></center></td>
+                                <td><center><%: gf.Duracao %> Hora(s) <%: gf.DuracaoMinuto %> Minuto(s) e <%: gf.DuracaoSegundo %></center></td> 
                                 <td><center><img src=" <%: "../Imagem/" + gf.Imagem %>" width="155px" /></center></td>
                                 <td><center><a href="ResConFilmeAltImg.aspx?Id=<%: gf.Id%>" class="btn-primary btn-sm">O</a></center></td>
                             </tr>

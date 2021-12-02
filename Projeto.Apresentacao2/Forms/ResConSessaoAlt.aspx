@@ -61,12 +61,25 @@
                             gs.Tipo_de_audio = dr["Tipo_de_audio"].ToString();
                             gs.Id_filme = Convert.ToInt32(dr["Id_filme"]);
                             gs.Id_sala = Convert.ToInt32(dr["Id_sala"]);
+                            
+                            gs.Duracao_Minuto = Convert.ToInt32(dr["Duracao_Minuto"]);
+                            gs.Duracao_Segundo = Convert.ToInt32(dr["Duracao_Segundo"]);
+                            gs.Horario_de_inicio_Minuto = Convert.ToInt32(dr["Horario_de_inicio_Minuto"]);
+                            gs.Horario_de_Inicio_Segundo = Convert.ToInt32(dr["Horario_de_inicio_Segundo"]);
 
     %><input type="hidden" name="Id" style="margin-left: 50px"  class="form-control"  value="<%: gs.Id %>">
+    <input type="hidden" name="Duracao_Minuto" style="margin-left: 50px"  class="form-control"  value="<%: gs.Duracao_Minuto %>">
+    <input type="hidden" name="Duracao_Segundo" style="margin-left: 50px"  class="form-control"  value="<%: gs.Duracao_Segundo %>">
     <div class="row">
         <div class="col-md-4">
             <label style="margin-left: 50px"><font face="arial" size="3">Horário de Início em Horas:</font></label>
             <input type="number" name="Horario_de_inicio" min="0" max="23" style="margin-left: 50px" value="<%: gs.Horario_de_inicio %>" class="form-control" />
+            <br /><br />
+            <label style="margin-left: 50px"><font face="arial" size="3">Horário de Início em Minuto(s):</font></label>
+            <input type="number" name="Horario_de_inicio_Minuto" min="0" max="59" value="<%: gs.Horario_de_inicio_Minuto %>" style="margin-left: 50px" class="form-control" />
+            <br /><br />
+            <label style="margin-left: 50px"><font face="arial" size="3">Horário de Início em Segundo(s):</font></label>
+            <input type="number" name="Horario_de_inicio_Segundo" min="0" max="59" value="<%: gs.Horario_de_Inicio_Segundo %>" style="margin-left: 50px" class="form-control" />
             <br /><br />
             <label style="margin-left: 50px"><font face="arial" size="3">Valor do Ingresso:</font></label>
                    <br /> <table style="margin-left:50px" width="500px"><tr><td>R$:</td><td> <input type="number" min="0.00" max="100000000000.00" name="Valor_do_Ingresso" value="<%:gs.Valor_do_ingresso %>" class="form-control"/></div></td></tr></table>

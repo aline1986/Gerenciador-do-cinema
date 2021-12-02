@@ -27,11 +27,11 @@
                     gf.Titulo = Request.Form["Titulo"].ToString();
                     gf.Duracao = Convert.ToInt32(Request.Form["Duracao"]);
                     gf.Descricao = Request.Form["Descricao"].ToString();
-
-
+                    gf.DuracaoMinuto = Convert.ToInt32(Request.Form["DuracaoMinuto"]);
+                    gf.DuracaoSegundo = Convert.ToInt32(Request.Form["DuracaoSegundo"]);
                     
 
-                        SqlCommand com = new SqlCommand("UPDATE Gerenciamento_de_filmes SET Titulo = '" + gf.Titulo + "', Duracao = '" + gf.Duracao + "', Descricao = '" + gf.Descricao + "'  Where Id = " + gf.Id, con);
+                        SqlCommand com = new SqlCommand("UPDATE Gerenciamento_de_filmes SET Titulo = '" + gf.Titulo + "', Duracao = '" + gf.Duracao + "', DuracaoMinuto = " + gf.DuracaoMinuto + ", DuracaoSegundo = " + gf.DuracaoSegundo + ", Descricao = '" + gf.Descricao + "'  Where Id = " + gf.Id, con);
                         com.ExecuteReader();
 
                     

@@ -83,16 +83,18 @@
                             gf.Descricao = dr["Descricao"].ToString();
                             gf.Duracao = Convert.ToInt32(dr["Duracao"]);
                             gf.Imagem = dr["Imagem"].ToString();
+                            gf.DuracaoMinuto = Convert.ToInt32(dr["DuracaoMinuto"]);
+                            gf.DuracaoSegundo = Convert.ToInt32(dr["DuracaoSegundo"]);
 
                             /// Codigo do(a) Usuario(a) Administrador(a)
                             %>
                             <tr>
                                 <td></td>
-                               <td><center><%: gf.Titulo %></center></td>
-                                <td><center><%: gf.Descricao %></center></td>
-                                <td><center><%: gf.Duracao %></center></td> 
+                               <td width="150px"><center><%: gf.Titulo %></center></td>
+                                <td width="300px" height="300px"><center><%: gf.Descricao %></center></td>
+                                <td width="400px"><center><%: gf.Duracao %> Hora(s) <%: gf.DuracaoMinuto %> Minuto(s) e <%: gf.DuracaoSegundo %> Segundos(s)</center></td> 
                                 <td><center><img src=" <%: "../Imagem/" + gf.Imagem %>" width="155px" /></center></td>
-                                <td><center><a href="DeleteFilme.aspx?Id=<%: gf.Id%>" onclick="Excluir()" class="btn-danger btn-sm"  ">O</a></center></td>
+                                <td><center><a href="DeleteFilme.aspx?Id=<%: gf.Id%>" onclick="Excluir()" class="btn-danger btn-sm"  ">Clique</a></center></td>
                             </tr>
                         <% } %>
                     
