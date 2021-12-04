@@ -93,9 +93,9 @@
                                                 {
                                                     /// Se tiver que da tratamento
                     %> 
-            <!--<script>
+            <script>
                 window.location.href = "../Home/CadastroErroSessao";
-            </script>-->
+            </script>
             <%: e.Message %>
 
                        

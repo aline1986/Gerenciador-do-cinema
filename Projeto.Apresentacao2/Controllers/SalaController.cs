@@ -35,7 +35,7 @@ namespace Projeto.Apresentacao2.Controllers
                 }
                 catch (Exception e)
                 {
-                    ViewBag.MessageErro = $"Sala já cadastrado!";
+                    ViewBag.MessageErro = $"Erro {e.Message}!";
                     ModelState.Clear();
                 }
             }
