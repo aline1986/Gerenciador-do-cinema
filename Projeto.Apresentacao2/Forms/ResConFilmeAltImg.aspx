@@ -1,25 +1,28 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ResConFilmeAltImg.aspx.cs" Inherits="Projeto.Apresentacao2.Forms.ResConFilmeAltImg" %>
 
+<title>Gerenciador de cinema</title>
 <link href="../Content/bootstrap.css" rel="stylesheet" type="text/css" />
-    <link href="../Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <script src="../Scripts/modernizr-2.6.2.js"></script>
-  <div class="navbar navbar-inverse navbar-fixed-top">
+<link href="../Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="../Scripts/modernizr-2.6.2.js"></script>
+<div class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="icon-bar"></span>  
-                <span class="icon-bar"></span>  
-                <span class="icon-bar"></span>  
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
             </button>
-           
-           
         </div>
         <br />
+        <a href="../Home/Logado" class="navbar-brand">Voltar</a>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav"></ul>
+
         </div>
+
     </div>
 </div>
+
 <br /><br /><br /><br />
 <h2 style="margin-left: 25px">Fazendo a Alteração da Imagem do Filme</h2>
 <hr />

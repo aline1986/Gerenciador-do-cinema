@@ -130,10 +130,10 @@
                                 <td><center>
                                     <% if (DateTime.Now >= vw_sfs.DiaFilme.AddDays(-3) && DateTime.Now <= vw_sfs.DiaFilme)
                                         { %>
-                                        <a href="#" onclick="Alert()" class="btn-danger btn-sm">O</a>
+                                        <a href="#" onclick="Alert()" class="btn-danger btn-sm">Clique</a>
 
                                         <% } else { %>
-                                            <a href="DeleteSessao.aspx?Id_Sessao=<%: vw_sfs.Id_Sessao%>" onclick="Confirm()" class="btn-danger btn-sm">O</a>
+                                            <a href="DeleteSessao.aspx?Id_Sessao=<%: vw_sfs.Id_Sessao%>" onclick="Confirm()" class="btn-danger btn-sm">Clique</a>
                                         
                                          <%   } %>
                                     </center>

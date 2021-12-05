@@ -133,12 +133,12 @@
                                 <td><center>
                                     <% if (DateTime.Now >= vw_sfs.DiaFilme.AddDays(-3))
                                         { %>
-                                        <a href="#" onclick="Alert()" class="btn-primary btn-sm">O</a>
+                                        <a href="#" onclick="Alert()" class="btn-primary btn-sm">Clique</a>
 
                                         <% } else if(DateTime.Now >= vw_sfs.DiaFilme.AddDays(0)) { %>
-                                            <a href="#" onclick="AlertApagar()" class="btn-primary btn-sm">O</a>
+                                            <a href="#" onclick="AlertApagar()" class="btn-primary btn-sm">Clique</a>
                                         <% } else { %>
-                                            <a href="ResConSessaoAlt.aspx?Id_Sessao=<%: vw_sfs.Id_Sessao%>" class="btn-primary btn-sm">O</a>
+                                            <a href="ResConSessaoAlt.aspx?Id_Sessao=<%: vw_sfs.Id_Sessao%>" class="btn-primary btn-sm">Clique</a>
                                         
                                          <%   } %>
                                     </center>

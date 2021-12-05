@@ -1,8 +1,27 @@
-﻿
-@{
-    ViewBag.Title = "Consulta";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿<title>Gerenciador de cinema</title>
+<link href="../Content/bootstrap.css" rel="stylesheet" type="text/css" />
+<link href="../Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script src="../Scripts/modernizr-2.6.2.js"></script>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <br />
+        <a href="../Home/Logado" class="navbar-brand">Voltar</a>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav"></ul>
+
+        </div>
+
+    </div>
+
+</div>
+<br /><br />
 
 <h2>Consulta de Filmes</h2>
 
@@ -66,26 +85,7 @@
         valor.innerHTML = html
     }
 </script>
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-         @*Links do Layout*@
-    </div>
-    <br />
-    <table border align="right" bgcolor="black">
-        <tr bgcolor="white">
-            <td><font face="arial" size="3">@DateTime.Now.DayOfWeek - @DateTime.Now.Day / @DateTime.Now.Month / @DateTime.Now.Year  @DateTime.Now.Hour : @DateTime.Now.Minute Hrs</font></td>
-        </tr>
-    </table>
-    @*Relogio da Pagina*@
-    <div class="navbar-collapse collapse">
-        <ul class="nav navbar-nav"></ul>
-    </div>
-</div>
+
 
 @*Layout da Pagina*@
 
@@ -114,20 +114,20 @@
             <th>Duração</th>
             @*Titulo Preco do Lanche*@
             <th>Imagem</th>
-            
+
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
             <tr>
-                
+
                 <td>@item.Titulo</td>
                 <td width="450px" height="100px">@item.Descricao</td>
                 <td>@item.Duracao</td>
-               
+
                 <td> <img src="~/Imagem/@item.imagem" /></td>
-                
+
             </tr>
         }
     </tbody>

@@ -75,7 +75,7 @@ namespace Projeto.Apresentacao2.Controllers
             return View();
         }
 
-        public ActionResult EditarErrooSala()
+        public ActionResult EditarErroSala()
         {
             return View();
         }
