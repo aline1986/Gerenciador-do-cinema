@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ConViewSessaoFilmeSala.aspx.cs" Inherits="Projeto.Apresentacao2.Forms.ResConViewSessaoFilmeSala" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ConViewSessaoSelect.aspx.cs" Inherits="Projeto.Apresentacao2.Forms.ConViewSessaoSelect" %>
 
 <title>Gerenciador de cinema</title>
     <link href="../Content/bootstrap.css" rel="stylesheet" type="text/css" />
@@ -36,12 +36,12 @@
 <hr /><script>
             function Alert()
             {
-                alert('Prezado(a) Usuário(a), A Data desse Filme Já Passou de 3 Dias, ele Não pode ser alterado');
+                alert('Prezado(a) Usuário(a), A Data desse Filme Já Passou de 3 Dias, ele Não pode ser cancelado');
             }
 
-          function AlertApagar()
+          function Confirm()
           {
-              alert('Prezado(a) Usuário(a), A Data desse Filme Já Passou do dia, ele já tem que ser Excluído');
+              Confirm('Deseja Realmente Excluir Esta Sessão?');
           }
       </script>
 <form id="form1" runat="server">
@@ -71,18 +71,17 @@
                     <table border style="margin-left: 150px" width="2500px" height="300px">
                         <th bgcolor="gray">
                             <td bgcolor="gray" width="150px"><strong><center>Título do Filme</center></strong></td>
-                            <td bgcolor="gray" width="300px"><strong><center>Descrição do Filme</center></strong></td>
-                            <td bgcolor="gray" width="1350px"><strong><center>Duração do Filme</center></strong></td>
+                            <td bgcolor="gray"><strong><center>Descrição do Filme</center></strong></td>
+                            <td bgcolor="gray" width="150px"><strong><center>Duração do Filme</center></strong></td>
                             <td bgcolor="gray"><strong><center>Imagem do Filme</center></strong></td>
-                            <td bgcolor="gray" width="180px"><strong><center>Sala</center></strong></td>
-                            <td bgcolor="gray" width="550px"><strong><center>Quantidade de Assentos da Sala</center></strong></td>
+                            <td bgcolor="gray"><strong><center>Sala</center></strong></td>
+                            <td bgcolor="gray" width="150px"><strong><center>Quantidade de Assentos da Sala</center></strong></td>
                             <td bgcolor="gray" width="150px"><strong><center>Dia do Filme</center></strong></td>
-                            <td bgcolor="gray" width="750px"><strong><center>Horário de Início do Filme</center></strong></td>
+                            <td bgcolor="gray" width="150px"><strong><center>Horário de Início do Filme</center></strong></td>
                             <td bgcolor="gray" width="150px"><strong><center>Horário Final do Filme</center></strong></td>
                             <td bgcolor="gray" width="150px"><strong><center>Tipo de Animação</center></strong></td>
                             <td bgcolor="gray" width="150px"><strong><center>Tipo de Áudio</center></strong></td>
-                            <td bgcolor="gray" width="150px"><strong><center>Valor do Ingresso</center></strong></td>
-                            <td bgcolor="gray"><strong><center>Editar</center></strong></td>
+                             <td bgcolor="gray" width="150px"><strong><center>Valor do Ingresso</center></strong></td>
                         </th>
                     <%while (dr.Read())
                         {
@@ -98,28 +97,25 @@
                             vw_sfs.QuantidadeDeAssentosSala = Convert.ToInt32(dr["QuantidadeDeAssentosSala"]);
                             vw_sfs.DiaFilme = Convert.ToDateTime(dr["DiaFilme"]);
                             vw_sfs.HorarioInicioFilme = Convert.ToInt32(dr["HorarioInicioFilme"]);
-                            vw_sfs.Horario_de_inicio_Minuto = Convert.ToInt32(dr["HorarioInicioMinutoSessao"]);
-                            vw_sfs.Horario_de_inicio_Segundo = Convert.ToInt32(dr["HorarioInicioSegundoSessao"]);
                             vw_sfs.HorarioFimFilme = Convert.ToInt32(dr["HorarioFimFilme"]);
-                            vw_sfs.Valor = Convert.ToInt32(dr["Valor"]);
+                             vw_sfs.Valor = Convert.ToInt32(dr["Valor"]);
                             vw_sfs.ValorIngressoCentavo = Convert.ToInt32(dr["ValorIngressoCentavo"]);
                             vw_sfs.TipoAnimacaoFilme = dr["TipoAnimacaoFilme"].ToString();
                             vw_sfs.TipoAudio = dr["TipoAudio"].ToString();
-                            vw_sfs.DuracaoMinuto = Convert.ToInt32(dr["DuracaoMinutoFilme"]);
-                            vw_sfs.DuracaoSegundo = Convert.ToInt32(dr["DuracaoSegundoFilme"]);
+
                             /// Codigo do(a) Usuario(a) Administrador(a)
                             %>
                             <tr>
                                 <td></td>
-                               <td width="250px"><center><%: vw_sfs.NomeFilme %></center></td>
-                                <td width="560px" height="230px"><center><%: vw_sfs.DescricaoFilme %></center></td> 
-                                <td width="1008px"><center><%: vw_sfs.DuracaoFilme %> Hora(s) <%: vw_sfs.DuracaoMinuto %> Minuto(s) e <%: vw_sfs.DuracaoSegundo %> Segundo(s)</center></td>
+                               <td><center><%: vw_sfs.NomeFilme %></center></td>
+                                <td><center><%: vw_sfs.DescricaoFilme %></center></td> 
+                                <td><center><%: vw_sfs.DuracaoFilme %> Hora(s)</center></td>
                                 <td><center><img src=" <%: "../Imagem/" + vw_sfs.ImagemFilme %>" width="155px" /></center></td>
                                 <td><center><%: vw_sfs.NomeSala%></center></td>
                                 <td><center><%: vw_sfs.QuantidadeDeAssentosSala%> Assento(s)</center></td>
                                 <td><center><%: vw_sfs.DiaFilme.ToString("dd/MM/yyyy")%></center></td>
-                                <td width="1000px" ><center><%: vw_sfs.HorarioInicioFilme %> Hora(s) <%: vw_sfs.Horario_de_inicio_Minuto %> Minuto(s) e <%: vw_sfs.Horario_de_inicio_Segundo %> Segundo(s)</center></td>
-                                <td width="1000px"><center><%: vw_sfs.HorarioFimFilme %> Hora(s) <%: vw_sfs.Horario_de_inicio_Minuto + vw_sfs.DuracaoMinuto %> e <%: vw_sfs.Horario_de_inicio_Segundo + vw_sfs.DuracaoSegundo %> Segundo(s)</center></td>
+                                <td><center><%: vw_sfs.HorarioInicioFilme %> Hora(s)</center></td>
+                                <td><center><%: vw_sfs.HorarioFimFilme %> Hora(s)</center></td>
                                 <td><center><%: vw_sfs.TipoAnimacaoFilme %></center></td>
                                 <td><center><%: vw_sfs.TipoAudio %></center></td>
                                 <td><center>R$ <%: vw_sfs.Valor %>,
@@ -130,20 +126,6 @@
     { %><%: vw_sfs.ValorIngressoCentavo %>
                                     <%} %>
                                     </center></td>
-                                <td><center>
-                                    <% if (DateTime.Now >= vw_sfs.DiaFilme.AddDays(-3))
-                                        { %>
-                                        <a href="#" onclick="Alert()" class="btn-primary btn-sm">O</a>
-
-                                        <% } else if(DateTime.Now >= vw_sfs.DiaFilme.AddDays(0)) { %>
-                                            <a href="#" onclick="AlertApagar()" class="btn-primary btn-sm">O</a>
-                                        <% } else { %>
-                                            <a href="ResConSessaoAlt.aspx?Id_Sessao=<%: vw_sfs.Id_Sessao%>" class="btn-primary btn-sm">O</a>
-                                        
-                                         <%   } %>
-                                    </center>
-
-                                </td>
                             </tr>
                         <% } %>
                     

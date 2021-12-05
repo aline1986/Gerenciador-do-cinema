@@ -81,6 +81,7 @@
                             <td bgcolor="gray" width="150px"><strong><center>Horário Final do Filme</center></strong></td>
                             <td bgcolor="gray" width="150px"><strong><center>Tipo de Animação</center></strong></td>
                             <td bgcolor="gray" width="150px"><strong><center>Tipo de Áudio</center></strong></td>
+                             <td bgcolor="gray" width="150px"><strong><center>Valor do Ingresso</center></strong></td>
                             <td bgcolor="gray"><strong><center>Excluir</center></strong></td>
                         </th>
                     <%while (dr.Read())
@@ -98,8 +99,11 @@
                             vw_sfs.DiaFilme = Convert.ToDateTime(dr["DiaFilme"]);
                             vw_sfs.HorarioInicioFilme = Convert.ToInt32(dr["HorarioInicioFilme"]);
                             vw_sfs.HorarioFimFilme = Convert.ToInt32(dr["HorarioFimFilme"]);
+                             vw_sfs.Valor = Convert.ToInt32(dr["Valor"]);
+                            vw_sfs.ValorIngressoCentavo = Convert.ToInt32(dr["ValorIngressoCentavo"]);
                             vw_sfs.TipoAnimacaoFilme = dr["TipoAnimacaoFilme"].ToString();
                             vw_sfs.TipoAudio = dr["TipoAudio"].ToString();
+
                             /// Codigo do(a) Usuario(a) Administrador(a)
                             %>
                             <tr>
@@ -115,6 +119,14 @@
                                 <td><center><%: vw_sfs.HorarioFimFilme %> Hora(s)</center></td>
                                 <td><center><%: vw_sfs.TipoAnimacaoFilme %></center></td>
                                 <td><center><%: vw_sfs.TipoAudio %></center></td>
+                                <td><center>R$ <%: vw_sfs.Valor %>,
+                                    <% if (vw_sfs.ValorIngressoCentavo == 0)
+                                        { %>00
+                                    <%}
+    else
+    { %><%: vw_sfs.ValorIngressoCentavo %>
+                                    <%} %>
+                                    </center></td>
                                 <td><center>
                                     <% if (DateTime.Now >= vw_sfs.DiaFilme.AddDays(-3) && DateTime.Now <= vw_sfs.DiaFilme)
                                         { %>

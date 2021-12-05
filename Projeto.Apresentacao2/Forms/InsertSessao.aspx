@@ -43,8 +43,14 @@
             <br /><br />
             
             <label style="margin-left: 50px"><font face="arial" size="3">Valor do ingresso R$:</font></label>
-                   <br /> <table style="margin-left:50px" width="500px"><tr><td><input type="number" min="0.00" max="100000000000.00" name="Valor_do_Ingresso" style="width: 100px; margin-bottom: 10px" class="form-control"/></div></td></tr></table>
-            <div style="margin-left: 50px" > <font color="red" size="2">Obs.: Para colocar os centavos use ponto em vez de vírgula Ex:25.05</font> </div>   
+            <br /><br />
+              <label style="margin-left: 50px"><font face="arial" size="3">Reais:</font></label>
+                   <br /> <table style="margin-left:50px" width="500px"><tr><td><input type="number" min="0" max="100000000000" name="Valor_do_Ingresso" style="width: 100px; margin-bottom: 10px" class="form-control"/></div></td></tr></table>
+           
+     
+        <label style="margin-left: 50px"><font face="arial" size="3">Centavos:</font></label>
+                   <br /> <table style="margin-left:50px" width="500px"><tr><td><input type="number" min="0" max="99" name="Valor_do_Ingresso_centavos" style="width: 100px; margin-bottom: 10px" class="form-control"/></div></td></tr></table>
+           
         <br /><br />
             <label style="margin-left: 50px"><font face="arial" size="3">Tipo de animação:</font></label>
                 <select name="Tipo_de_animacao" style="margin-left: 50px; width: 170px" class="form-control">

@@ -20,9 +20,12 @@ namespace Projeto.Entidades
         public DateTime DiaFilme { get; set; }
         public int HorarioInicioFilme { get; set; }
         public int HorarioFimFilme { get; set; }
+        public int HorarioFimFilmeMinuto { get; set; }
+        public int HorarioFimFilmeSegundo { get; set; }
         public string TipoAnimacaoFilme { get; set; }
         public string TipoAudio { get; set; }
         public double Valor { get; set; }
+        public double ValorIngressoCentavo { get; set; }
         public int Horario_de_inicio_Minuto { get; set; }
         public int Horario_de_inicio_Segundo { get; set; }
         public int DuracaoMinuto { get; set; }
@@ -33,7 +36,7 @@ namespace Projeto.Entidades
 
         }
 
-        public VW_Sessao_Filme_Sala(int id_Sessao, int id_Filme, int id_Sala, string nomeFilme, string descricaoFilme, int duracaoFilme, string imagemFilme, string nomeSala, int quantidadeDeAssentosSala, DateTime diaFilme, int horarioInicioFilme, int horarioFimFilme, string tipoAnimacaoFilme, string tipoAudio, double valor, int horario_de_inicio_Minuto, int horario_de_inicio_Segundo, int duracaoMinuto, int duracaoSegundo)
+        public VW_Sessao_Filme_Sala(int id_Sessao, int id_Filme, int id_Sala, string nomeFilme, string descricaoFilme, int duracaoFilme, string imagemFilme, string nomeSala, int quantidadeDeAssentosSala, DateTime diaFilme, int horarioInicioFilme, int horarioFimFilme, string tipoAnimacaoFilme, string tipoAudio, double valor, int horario_de_inicio_Minuto, int horario_de_inicio_Segundo, int duracaoMinuto, int duracaoSegundo, int horarioFimFilmeMinuto, int horarioFimFilmeSegundo, double valorIngressoCentavo)
         {
             Id_Sessao = id_Sessao;
             Id_Filme = id_Filme;
@@ -50,10 +53,13 @@ namespace Projeto.Entidades
             TipoAnimacaoFilme = tipoAnimacaoFilme;
             TipoAudio = tipoAudio;
             Valor = valor;
+            ValorIngressoCentavo = valorIngressoCentavo;
             Horario_de_inicio_Minuto = horario_de_inicio_Minuto;
             Horario_de_inicio_Segundo = horario_de_inicio_Segundo;
             DuracaoMinuto = duracaoMinuto;
             DuracaoSegundo = duracaoSegundo;
+            HorarioFimFilmeMinuto = horarioFimFilmeMinuto;
+            HorarioFimFilmeSegundo = horarioFimFilmeSegundo;
         }
 
         public override string ToString()

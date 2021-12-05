@@ -56,7 +56,8 @@
                             gs.Data = Convert.ToDateTime(dr["Data"]);
                             gs.Horario_de_inicio = Convert.ToInt32(dr["Horario_de_inicio"]);
                             gs.Horario_de_fim = Convert.ToInt32(dr["Horario_de_fim"]);
-                            gs.Valor_do_ingresso = Convert.ToInt32(dr["Valor_do_ingresso"]);
+                            gs.Valor_do_ingresso = Convert.ToInt32(dr["Valor_do_ingresso_reais"]);
+                            gs.Valor_do_ingresso_centavos = Convert.ToInt32(dr["Valor_do_ingresso_centavos"]);
                             gs.Tipo_de_animacao = dr["Tipo_de_animacao"].ToString();
                             gs.Tipo_de_audio = dr["Tipo_de_audio"].ToString();
                             gs.Id_filme = Convert.ToInt32(dr["Id_filme"]);
@@ -81,8 +82,9 @@
             <label style="margin-left: 50px"><font face="arial" size="3">Horário de Início em Segundo(s):</font></label>
             <input type="number" name="Horario_de_inicio_Segundo" min="0" max="59" value="<%: gs.Horario_de_Inicio_Segundo %>" style="margin-left: 50px" class="form-control" />
             <br /><br />
-            <label style="margin-left: 50px"><font face="arial" size="3">Valor do Ingresso:</font></label>
-                   <br /> <table style="margin-left:50px" width="500px"><tr><td>R$:</td><td> <input type="number" min="0.00" max="100000000000.00" name="Valor_do_Ingresso" value="<%:gs.Valor_do_ingresso %>" class="form-control"/></div></td></tr></table>
+            <label style="margin-left: 50px"><font face="arial" size="3">Valor do Ingresso R$:</font></label>
+                   <br /> <table style="margin-left:50px" width="500px"><tr><td>Reais:</td><td> <input type="number" min="0" max="100000000000" name="Valor_do_Ingresso" value="<%:gs.Valor_do_ingresso %>" class="form-control"/></div></td></tr></table>
+            <br /> <table style="margin-left:50px" width="500px"><tr><td>Centavos:</td><td> <input type="number" min="0" max="99" name="Valor_do_Ingresso_centavos" value="<%:gs.Valor_do_ingresso_centavos %>" class="form-control"/></div></td></tr></table>
             <br /><br />
                         <label style="margin-left: 50px"><font face="arial" size="3">Tipo de Áudio:</font></label>
                 <select name="Tipo_de_audio" style="margin-left: 50px" class="form-control">

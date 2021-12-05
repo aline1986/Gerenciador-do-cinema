@@ -26,7 +26,8 @@
 
                     gs.Horario_de_inicio = Convert.ToInt32(Request.Form["Horario_de_inicio"]);
                     gs.Horario_de_fim = Convert.ToInt32(Request.Form["Horario_de_fim"]);
-                    gs.Valor_do_ingresso = Convert.ToDouble(Request.Form["Valor_do_ingresso"]);
+                    gs.Valor_do_ingresso = Convert.ToDouble(Request.Form["Valor_do_ingresso_reais"]);
+                    gs.Valor_do_ingresso_centavos = Convert.ToDouble(Request.Form["Valor_do_ingresso_centavos"]);
                     gs.Tipo_de_audio = Request.Form["Tipo_de_audio"].ToString();
                     gs.Horario_de_inicio_Minuto = Convert.ToInt32(Request.Form["Horario_de_inicio_Minuto"]);
                     gs.Horario_de_Inicio_Segundo = Convert.ToInt32(Request.Form["Horario_de_Inicio_Segundo"]);
@@ -71,8 +72,8 @@
                         }
                     }
                     SqlCommand com = new SqlCommand("UPDATE Gerenciamento_de_sessoes SET " +
-                        "Horario_de_inicio = " + gs.Horario_de_inicio + ", Horario_de_fim = " + gs.Horario_de_fim + ", Valor_do_ingresso = " + gs.Valor_do_ingresso + " " +
-                        ", Horario_de_inicio_Minuto = " + gs.Horario_de_inicio_Minuto + ",  Horario_de_fim_Minuto = " + gs.Horario_de_fim_Minuto + ", Horario_de_inicio_Segundo = " + gs.Horario_de_Inicio_Segundo + ", Horario_de_fim_segundo = " + gs.Horario_de_fim_Segundo + " Where Id = " + gs.Id, con);
+                        "Horario_de_inicio = " + gs.Horario_de_inicio + ", Horario_de_fim = " + gs.Horario_de_fim + ", Valor_do_ingresso_reais = " + gs.Valor_do_ingresso + " " +
+                        ", Horario_de_inicio_Minuto = " + gs.Horario_de_inicio_Minuto + ",  Horario_de_fim_Minuto = " + gs.Horario_de_fim_Minuto + ", Horario_de_inicio_Segundo = " + gs.Horario_de_Inicio_Segundo + ", Horario_de_fim_segundo = " + gs.Horario_de_fim_Segundo + ", Valor_do_ingresso_centavos = " + gs.Valor_do_ingresso_centavos + " Where Id = " + gs.Id, con);
                     com.ExecuteReader();
 
 
@@ -94,10 +95,10 @@
                                                 {
                                                     /// Se tiver que da tratamento
                     %> 
-            
-            <script>
+            <%: e.Message %>
+           <!-- <script>
                 window.location.href = "../Home/EditarErroSessao";
-            </script>
+            </script>-->
                     
                        
                                            <% /// Gera a mensagem de erro %>     

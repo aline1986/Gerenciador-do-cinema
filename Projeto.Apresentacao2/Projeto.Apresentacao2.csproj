@@ -112,6 +112,7 @@
     <Content Include="Forms\ConSala.aspx" />
     <Content Include="Forms\ConSessaoExc.aspx" />
     <Content Include="Forms\ControllerPortal.aspx" />
+    <Content Include="Forms\ConViewSessaoSelect.aspx" />
     <Content Include="Forms\DeleteFilme.aspx" />
     <Content Include="Forms\DeleteSala.aspx" />
     <Content Include="Forms\DeleteSessao.aspx" />
@@ -217,6 +218,13 @@
     </Compile>
     <Compile Include="Forms\ControllerPortal.aspx.designer.cs">
       <DependentUpon>ControllerPortal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConViewSessaoSelect.aspx.cs">
+      <DependentUpon>ConViewSessaoSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forms\ConViewSessaoSelect.aspx.designer.cs">
+      <DependentUpon>ConViewSessaoSelect.aspx</DependentUpon>
     </Compile>
     <Compile Include="Forms\DeleteFilme.aspx.cs">
       <DependentUpon>DeleteFilme.aspx</DependentUpon>
