@@ -21,43 +21,46 @@
     </div>
 </div>
 <br /><br /><br /><br />
-<h2 style="margin-left:100px">Cadastro de Sessão</h2>
+<h2 style="margin-left:100px">Cadastro de sessão</h2>
 <hr />
 <form method="post" action="ActionCadastroSessao.aspx">
  
     <div class="row">
         <div class="col-md-4">
-            <label style="margin-left: 50px"><font face="arial" size="3">Data da Sessão:</font></label>
-            <input type="date" name="Data" style="margin-left: 50px" class="form-control" />
+            <label style="margin-left: 50px"><font face="arial" size="3">Data da sessão:</font></label>
+            <input type="date" name="Data" style="margin-left: 50px; width: 155px" class="form-control" />
             <br /><br />
-            <label style="margin-left: 50px"><font face="arial" size="3">Horário de Início em Hora(s):</font></label>
-            <input type="number" name="Horario_de_inicio" min="0" max="23" value="0" style="margin-left: 50px" class="form-control" />
+            <label style="margin-left: 50px"><font face="arial" size="5">Horário de início:</font></label>
             <br /><br />
-            <label style="margin-left: 50px"><font face="arial" size="3">Horário de Início em Minuto(s):</font></label>
-            <input type="number" name="Horario_de_inicio_Minuto" min="0" max="59" value="0" style="margin-left: 50px" class="form-control" />
+            <label style="margin-left: 50px"><font face="arial" size="3">Hora(s):</font></label>
+            <input type="number" name="Horario_de_inicio" min="0" max="23" value="0" style="margin-left: 50px; width:70px" class="form-control" />
             <br /><br />
-            <label style="margin-left: 50px"><font face="arial" size="3">Horário de Início em Segundo(s):</font></label>
-            <input type="number" name="Horario_de_inicio_Segundo" min="0" max="59" value="0" style="margin-left: 50px" class="form-control" />
+            <label style="margin-left: 50px"><font face="arial" size="3">Minuto(s):</font></label>
+            <input type="number" name="Horario_de_inicio_Minuto" min="0" max="59" value="0" style="margin-left: 50px; width:70px" class="form-control" />
+            <br /><br />
+            <label style="margin-left: 50px"><font face="arial" size="3">Segundo(s):</font></label>
+            <input type="number" name="Horario_de_inicio_Segundo" min="0" max="59" value="0" style="margin-left: 50px; width:70px" class="form-control" />
             <br /><br />
             
-            <label style="margin-left: 50px"><font face="arial" size="3">Valor do Ingresso:</font></label>
-                   <br /> <table style="margin-left:50px" width="500px"><tr><td>R$:</td><td> <input type="number" min="0.00" max="100000000000.00" name="Valor_do_Ingresso" class="form-control"/></div></td></tr></table>
-            <br /><br />
-            <label style="margin-left: 50px"><font face="arial" size="3">Tipo de Animação:</font></label>
-                <select name="Tipo_de_animacao" style="margin-left: 50px" class="form-control">
+            <label style="margin-left: 50px"><font face="arial" size="3">Valor do ingresso R$:</font></label>
+                   <br /> <table style="margin-left:50px" width="500px"><tr><td><input type="number" min="0.00" max="100000000000.00" name="Valor_do_Ingresso" style="width: 100px; margin-bottom: 10px" class="form-control"/></div></td></tr></table>
+            <div style="margin-left: 50px" > <font color="red" size="2">Obs.: Para colocar os centavos use ponto em vez de vírgula Ex:25.05</font> </div>   
+        <br /><br />
+            <label style="margin-left: 50px"><font face="arial" size="3">Tipo de animação:</font></label>
+                <select name="Tipo_de_animacao" style="margin-left: 50px; width: 170px" class="form-control">
                      <option selected="selected" value="">Selecione a Opção</option>
                      <option value="2D">2D</option>
                      <option value="3D">3D</option>
                 </select>
             <br /><br />
-            <label style="margin-left: 50px"><font face="arial" size="3">Tipo de Áudio:</font></label>
-                <select name="Tipo_de_audio" style="margin-left: 50px" class="form-control">
+            <label style="margin-left: 50px"><font face="arial" size="3">Tipo de áudio:</font></label>
+                <select name="Tipo_de_audio" style="margin-left: 50px; width: 170px" class="form-control">
                      <option selected="selected" value="">Selecione a Opção</option>
                      <option value="Dublado">Dublado</option>
                      <option value="Legendado">Legendado</option>
                 </select>
             <br /><br />
-            <label style="margin-left: 50px"><font face="arial" size="3">Filme:</font></label>
+            <label style="margin-left: 50px"><font face="arial" size="3">Filme e duração:</font></label>
                 <select name="Id_Filme" style="margin-left: 50px" class="form-control">
                      <option selected="selected" value="">Selecione a Opção</option>
                      <%@Import Namespace="System.Data"  %>
@@ -92,10 +95,11 @@
                             gf.Id = Convert.ToInt32(dr["Id"]);
                             gf.Titulo = dr["Titulo"].ToString();
                             gf.Duracao = Convert.ToInt32(dr["Duracao"]);
-
+                            gf.DuracaoMinuto = Convert.ToInt32(dr["DuracaoMinuto"]);
+                            gf.DuracaoSegundo = Convert.ToInt32(dr["DuracaoSegundo"]);
 
                             
-                            %><option value = "<%: gf.Id %>"><%  dura.Add(gf.Id); %><%: gf.Titulo %> - Duração do Filme: <%: gf.Duracao %> Horas</option>
+                            %><option value = "<%: gf.Id %>"><%  dura.Add(gf.Id); %><%: gf.Titulo %> - Duração do Filme: <%: gf.Duracao %> Horas <%: gf.DuracaoMinuto %> Minutos <%: gf.DuracaoSegundo %> Segundos</option>
                             
                     
                  <%
