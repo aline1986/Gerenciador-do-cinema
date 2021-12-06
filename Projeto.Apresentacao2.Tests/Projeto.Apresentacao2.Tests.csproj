@@ -67,6 +67,14 @@
       <Project>{68ECFE4E-11E8-4EB8-863B-7F534584FD09}</Project>
       <Name>Projeto.Apresentacao2</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Projeto.DAL\Projeto.DAL.csproj">
+      <Project>{09773b5c-36e1-4303-9605-573312415f7b}</Project>
+      <Name>Projeto.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Projeto.Entidades\Projeto.Entidades.csproj">
+      <Project>{b42e7fae-88c9-484b-8bf8-4715e2526d4e}</Project>
+      <Name>Projeto.Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
