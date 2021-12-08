@@ -39,5 +39,33 @@ namespace Projeto.Apresentacao2.Tests
                 Assert.IsTrue(true);
             }
         }
+
+        [TestMethod]
+        public void TestMethod2()
+        {
+            try
+            {
+                con = new SqlConnection(ConfigurationManager.ConnectionStrings["GerenciadorDoCinema"].ConnectionString);
+                con.Open();
+
+                Gerenciamento_de_filmes gf = new Gerenciamento_de_filmes();
+                gf.Titulo = "Marley e Eu";
+                gf.Imagem = "dowload.png";
+                gf.Descricao = "Fime para toda famíla";
+                gf.Duracao = 2;
+                gf.DuracaoMinuto = 20;
+                gf.DuracaoSegundo = 10;
+
+                com = new SqlCommand("Insert Into Gerenciamento_de_filmes(Titulo,Imagem,Descricao,Duracao,DuracaoMinuto,DuracaoSegundo)Values('" + gf.Titulo + "','" + gf.Imagem + "','" + gf.Descricao + "'," + gf.Duracao + "," + gf.DuracaoMinuto + "," + gf.DuracaoSegundo + ")", con);
+
+                con.Close();
+
+            }
+            catch (Exception)
+            {
+
+                Assert.IsTrue(true);
+            }
+        }
     }
 }
