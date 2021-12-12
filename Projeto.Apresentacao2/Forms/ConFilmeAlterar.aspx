@@ -32,7 +32,7 @@
 
     </div>
 <br /><br /><br /><br />
-<strong><font face="arial" size="6">Listagem de Filmes</font></strong>
+<strong><font face="arial" size="6">Alteração de dados dos filmes</font></strong>
 <br /><br />
 <hr />
 <form id="form1" runat="server">

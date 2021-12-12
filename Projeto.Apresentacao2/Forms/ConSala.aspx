@@ -23,7 +23,7 @@
     </div>
 </div>
 <br /><br /><br /><br /><br /><br />
-<strong><font face="arial" size="6">Listagem de salas</font></strong>
+<strong><font face="arial" size="6">Consulta de salas</font></strong>
 <br /><br />
 <hr />
 <script>
@@ -67,7 +67,7 @@
                         <th bgcolor="gray">
                             <td bgcolor="gray"><strong><center>Nome da Sala</center></strong></td>
                             <td bgcolor="gray"><strong><center>Quantidade de Assentos</center></strong></td>
-                             <td bgcolor="gray"><strong><center>Encoste ou clique para mostrar Imagem da sala</center></strong></td>
+                             <td bgcolor="gray"><strong><center>Imagem das salas</center></strong></td>
                         </th>
                     <%while (dr.Read())
                     {
@@ -85,7 +85,7 @@
                                 <td></td>
                                <td><center><%: ls.Nome %></center></td>
                                 <td><center><%: ls.QuantidadeDeAssentos %></center></td> 
-                                <td><center><button onmousemove="MostrarIagem()" class="btn-primary btn-sm" >Clique</button></center></td>
+                                <td><center><button onmousemove="MostrarIagem()" class="btn-primary btn-sm" >Encoste</button></center></td>
                             </tr>
                         <% } %>
                     
