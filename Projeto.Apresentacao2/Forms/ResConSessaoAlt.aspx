@@ -55,7 +55,6 @@
                             gs.Id = Convert.ToInt32(dr["Id"]);
                             gs.Data = Convert.ToDateTime(dr["Data"]);
                             gs.Horario_de_inicio = Convert.ToInt32(dr["Horario_de_inicio"]);
-                            gs.Horario_de_fim = Convert.ToInt32(dr["Horario_de_fim"]);
                             gs.Valor_do_ingresso = Convert.ToInt32(dr["Valor_do_ingresso_reais"]);
                             gs.Valor_do_ingresso_centavos = Convert.ToInt32(dr["Valor_do_ingresso_centavos"]);
                             gs.Tipo_de_animacao = dr["Tipo_de_animacao"].ToString();
@@ -63,8 +62,6 @@
                             gs.Id_filme = Convert.ToInt32(dr["Id_filme"]);
                             gs.Id_sala = Convert.ToInt32(dr["Id_sala"]);
                             
-                            gs.Duracao_Minuto = Convert.ToInt32(dr["Duracao_Minuto"]);
-                            gs.Duracao_Segundo = Convert.ToInt32(dr["Duracao_Segundo"]);
                             gs.Horario_de_inicio_Minuto = Convert.ToInt32(dr["Horario_de_inicio_Minuto"]);
                             gs.Horario_de_Inicio_Segundo = Convert.ToInt32(dr["Horario_de_inicio_Segundo"]);
 
@@ -115,7 +112,7 @@
      %>
             <br /><br />
 
-                    <input type="submit" style="margin-left: 50px" class="btn btn-primary btn-sm" value="Cadastrar Sessão" />
+                    <input type="submit" style="margin-left: 50px" class="btn btn-primary btn-sm" value="Alterar dados da sessão" />
         </div>
     </div>
 </form>

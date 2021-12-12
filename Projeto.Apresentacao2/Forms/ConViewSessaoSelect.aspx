@@ -97,7 +97,7 @@
                             vw_sfs.QuantidadeDeAssentosSala = Convert.ToInt32(dr["QuantidadeDeAssentosSala"]);
                             vw_sfs.DiaFilme = Convert.ToDateTime(dr["DiaFilme"]);
                             vw_sfs.HorarioInicioFilme = Convert.ToInt32(dr["HorarioInicioFilme"]);
-                            vw_sfs.HorarioFimFilme = Convert.ToInt32(dr["HorarioFimFilme"]);
+                            vw_sfs.HorarioFimFilme = Convert.ToInt32(dr["HorarioInicioFilme"]) + Convert.ToInt32(dr["DuracaoFilme"]);
                              vw_sfs.Valor = Convert.ToInt32(dr["Valor"]);
                             vw_sfs.ValorIngressoCentavo = Convert.ToInt32(dr["ValorIngressoCentavo"]);
                             vw_sfs.TipoAnimacaoFilme = dr["TipoAnimacaoFilme"].ToString();

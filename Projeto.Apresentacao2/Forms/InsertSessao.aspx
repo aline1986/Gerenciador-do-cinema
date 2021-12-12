@@ -105,7 +105,7 @@
                             gf.DuracaoSegundo = Convert.ToInt32(dr["DuracaoSegundo"]);
 
                             
-                            %><option value = "<%: gf.Id %>"><%  dura.Add(gf.Id); %><%: gf.Titulo %> - Duração do Filme: <%: gf.Duracao %> Horas <%: gf.DuracaoMinuto %> Minutos <%: gf.DuracaoSegundo %> Segundos</option>
+                            %><option value = "<%: gf.Id %>"><%: gf.Titulo %> - Duração do Filme: <%: gf.Duracao %> Horas <%: gf.DuracaoMinuto %> Minutos <%: gf.DuracaoSegundo %> Segundos</option>
                             
                     
                  <%
@@ -157,10 +157,7 @@
                             if (gf.Duracao != null && gf.DuracaoMinuto != null && gf.DuracaoSegundo != null)
                             {
 
-                            %><input type="hidden" name="Duracao" value = "<%: gf.Duracao %>"/>
-                                <input type="hidden" name="DuracaoMinuto" value = "<%: gf.DuracaoMinuto %>"/>
-                                <input type="hidden" name="DuracaoSegundo" value = "<%: gf.DuracaoSegundo %>"/>
-                   
+                            %>
                   <%   }else{
         }
                  }

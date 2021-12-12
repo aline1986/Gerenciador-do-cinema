@@ -32,7 +32,7 @@
 
 
 
-                    SqlCommand com = new SqlCommand("SELECT * FROM Gerenciamento_de_sessoes Where Id = " + Id, con);
+                    SqlCommand com = new SqlCommand("DELETE FROM Gerenciamento_de_sessoes Where Id = " + Id, con);
                     SqlDataReader dr = com.ExecuteReader();
 
                     if(dr.Read())

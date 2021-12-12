@@ -93,13 +93,45 @@
                             vw_sfs.NomeFilme = dr["NomeFilme"].ToString();
                             vw_sfs.DescricaoFilme = dr["DescricaoFilme"].ToString();
                             vw_sfs.DuracaoFilme = Convert.ToInt32(dr["DuracaoFilme"]);
+                            vw_sfs.DuracaoMinuto = Convert.ToInt32(dr["DuracaoMinutoFilme"]);
+                            vw_sfs.DuracaoSegundo = Convert.ToInt32(dr["DuracaoSegundoFilme"]);
                             vw_sfs.ImagemFilme = dr["ImagemFilme"].ToString();
                             vw_sfs.NomeSala = dr["NomeSala"].ToString();
                             vw_sfs.QuantidadeDeAssentosSala = Convert.ToInt32(dr["QuantidadeDeAssentosSala"]);
                             vw_sfs.DiaFilme = Convert.ToDateTime(dr["DiaFilme"]);
                             vw_sfs.HorarioInicioFilme = Convert.ToInt32(dr["HorarioInicioFilme"]);
-                            vw_sfs.HorarioFimFilme = Convert.ToInt32(dr["HorarioFimFilme"]);
-                             vw_sfs.Valor = Convert.ToInt32(dr["Valor"]);
+                            vw_sfs.Horario_de_inicio_Minuto = Convert.ToInt32(dr["HorarioInicioMinutoSessao"]);
+                            vw_sfs.Horario_de_inicio_Segundo = Convert.ToInt32(dr["HorarioInicioSegundoSessao"]);
+                            vw_sfs.HorarioFimFilme = Convert.ToInt32(dr["HorarioInicioFilme"]) + Convert.ToInt32(dr["DuracaoFilme"]);
+                            vw_sfs.HorarioFimFilmeMinuto = Convert.ToInt32(dr["HorarioInicioMinutoSessao"]) + Convert.ToInt32(dr["DuracaoMinutoFilme"]);
+                            if(vw_sfs.HorarioFimFilme > 23)
+                            {
+                                vw_sfs.HorarioFimFilme -= 23;
+                            }
+
+                            if (vw_sfs.HorarioFimFilmeMinuto > 59)
+                            {
+                                vw_sfs.HorarioFimFilmeMinuto -= 60;
+                                vw_sfs.HorarioFimFilme += 1;
+                                if(vw_sfs.HorarioFimFilme > 23)
+                                {
+                                    vw_sfs.HorarioFimFilme -= 23;
+                                }
+                            }
+                            vw_sfs.HorarioFimFilmeSegundo = Convert.ToInt32(dr["HorarioInicioSegundoSessao"]) + Convert.ToInt32(dr["DuracaoSegundoFilme"]);
+                            if(vw_sfs.HorarioFimFilmeSegundo > 59)
+                            {
+                                vw_sfs.HorarioFimFilmeSegundo -= 60;
+                                if(vw_sfs.HorarioFimFilmeMinuto > 59)
+                                {
+                                    vw_sfs.HorarioFimFilmeMinuto -= 60;
+                                    if(vw_sfs.HorarioFimFilme > 23)
+                                    {
+                                        vw_sfs.HorarioFimFilme -= 23;
+                                    }
+                                }
+                            }
+                            vw_sfs.Valor = Convert.ToInt32(dr["Valor"]);
                             vw_sfs.ValorIngressoCentavo = Convert.ToInt32(dr["ValorIngressoCentavo"]);
                             vw_sfs.TipoAnimacaoFilme = dr["TipoAnimacaoFilme"].ToString();
                             vw_sfs.TipoAudio = dr["TipoAudio"].ToString();
@@ -110,13 +142,13 @@
                                 <td></td>
                                <td><center><%: vw_sfs.NomeFilme %></center></td>
                                 <td><center><%: vw_sfs.DescricaoFilme %></center></td> 
-                                <td><center><%: vw_sfs.DuracaoFilme %> Hora(s)</center></td>
+                                <td><center><%: vw_sfs.DuracaoFilme %> Hora(s) <%: vw_sfs.DuracaoMinuto %> Munuto(s) e <%: vw_sfs.DuracaoSegundo %> Segundo(s)</center></td>
                                 <td><center><img src=" <%: "../Imagem/" + vw_sfs.ImagemFilme %>" width="155px" /></center></td>
                                 <td><center><%: vw_sfs.NomeSala%></center></td>
                                 <td><center><%: vw_sfs.QuantidadeDeAssentosSala%> Assento(s)</center></td>
                                 <td><center><%: vw_sfs.DiaFilme.ToString("dd/MM/yyyy")%></center></td>
-                                <td><center><%: vw_sfs.HorarioInicioFilme %> Hora(s)</center></td>
-                                <td><center><%: vw_sfs.HorarioFimFilme %> Hora(s)</center></td>
+                                <td><center><%: vw_sfs.HorarioInicioFilme %> Hora(s) <%: vw_sfs.Horario_de_inicio_Minuto %> Minuto(s) e <%: vw_sfs.Horario_de_inicio_Segundo %> Segundo(s)</center></td>
+                                <td><center><%: vw_sfs.HorarioFimFilme %> Hora(s) <%: vw_sfs.HorarioFimFilmeMinuto %> Minuto(s) e <%: vw_sfs.HorarioFimFilmeSegundo %> Segundo(s)</center></td>
                                 <td><center><%: vw_sfs.TipoAnimacaoFilme %></center></td>
                                 <td><center><%: vw_sfs.TipoAudio %></center></td>
                                 <td><center>R$ <%: vw_sfs.Valor %>,

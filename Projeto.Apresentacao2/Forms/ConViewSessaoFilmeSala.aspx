@@ -97,16 +97,19 @@
                             vw_sfs.NomeSala = dr["NomeSala"].ToString();
                             vw_sfs.QuantidadeDeAssentosSala = Convert.ToInt32(dr["QuantidadeDeAssentosSala"]);
                             vw_sfs.DiaFilme = Convert.ToDateTime(dr["DiaFilme"]);
+                            vw_sfs.DuracaoFilme = Convert.ToInt32(dr["DuracaoFilme"]);
                             vw_sfs.HorarioInicioFilme = Convert.ToInt32(dr["HorarioInicioFilme"]);
                             vw_sfs.Horario_de_inicio_Minuto = Convert.ToInt32(dr["HorarioInicioMinutoSessao"]);
                             vw_sfs.Horario_de_inicio_Segundo = Convert.ToInt32(dr["HorarioInicioSegundoSessao"]);
-                            vw_sfs.HorarioFimFilme = Convert.ToInt32(dr["HorarioFimFilme"]);
+                            vw_sfs.HorarioFimFilme = Convert.ToInt32(dr["HorarioInicioFilme"]) + Convert.ToInt32(dr["DuracaoFilme"]);
                             vw_sfs.Valor = Convert.ToInt32(dr["Valor"]);
                             vw_sfs.ValorIngressoCentavo = Convert.ToInt32(dr["ValorIngressoCentavo"]);
                             vw_sfs.TipoAnimacaoFilme = dr["TipoAnimacaoFilme"].ToString();
                             vw_sfs.TipoAudio = dr["TipoAudio"].ToString();
                             vw_sfs.DuracaoMinuto = Convert.ToInt32(dr["DuracaoMinutoFilme"]);
+                            vw_sfs.HorarioFimFilmeMinuto = Convert.ToInt32(dr["HorarioInicioMinutoSessao"]) + Convert.ToInt32(dr["DuracaoMinutoFilme"]);
                             vw_sfs.DuracaoSegundo = Convert.ToInt32(dr["DuracaoSegundoFilme"]);
+                            vw_sfs.HorarioFimFilmeSegundo = Convert.ToInt32(dr["HorarioInicioSegundoSessao"]) + Convert.ToInt32(dr["DuracaoSegundoFilme"]);
                             /// Codigo do(a) Usuario(a) Administrador(a)
                             %>
                             <tr>

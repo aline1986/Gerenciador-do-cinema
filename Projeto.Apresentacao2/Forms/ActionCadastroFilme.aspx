@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ActionCadastroFilme.aspx.cs" Inherits="Projeto.Apresentacao2.Forms.ActionCadastroFilme" %>
+﻿
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ActionCadastroFilme.aspx.cs" Inherits="Projeto.Apresentacao2.Forms.ActionCadastroFilme" %>
 
 <form id="form1" runat="server">
         <div>
