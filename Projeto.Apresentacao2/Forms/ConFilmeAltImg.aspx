@@ -23,7 +23,7 @@
     </div>
 </div>
 <br /><br /><br /><br />
-<strong><font face="arial" size="6">Listagem de Filmes</font></strong>
+<strong><font face="arial" size="6">Alterar imagem de filmes</font></strong>
 <br /><br />
 <hr />
 <form id="form1" runat="server">
@@ -52,9 +52,9 @@
             
                     <table border style="margin-left: 150px" width="900px" height="300px">
                         <th bgcolor="gray">
-                            <td bgcolor="gray"><strong><center>Título</center></strong></td>
+                            <td bgcolor="gray" width="200px"><strong><center>Título</center></strong></td>
                             <td bgcolor="gray"><strong><center>Descrição</center></strong></td>
-                            <td bgcolor="gray"><strong><center>Duração</center></strong></td>
+                            <td bgcolor="gray" width="200px"><strong><center>Duração</center></strong></td>
                             <td bgcolor="gray"><strong><center>Imagem do Filme</center></strong></td>
                             <td bgcolor="gray"><strong><center>Editar</center></strong></td>
                         </th>

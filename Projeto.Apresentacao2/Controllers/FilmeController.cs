@@ -60,7 +60,8 @@ namespace Projeto.Apresentacao2.Controllers
                     model.Descricao = gf.Descricao;
                     model.imagem = gf.Imagem;
                     model.Duracao = gf.Duracao;
-
+                    model.DuracaoMinuto = gf.DuracaoMinuto;
+                    model.DuracaoSegundo = gf.DuracaoSegundo;
                     lista.Add(model);
 
                 }

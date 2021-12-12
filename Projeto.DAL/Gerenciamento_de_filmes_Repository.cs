@@ -106,6 +106,10 @@ namespace Projeto.DAL
                 /// Campo Descricao
                 G.Duracao = Convert.ToInt32(dr["Duracao"]);
                 /// Campo Duracao
+                G.DuracaoMinuto = Convert.ToInt32(dr["DuracaoMinuto"]);
+
+                G.DuracaoSegundo = Convert.ToInt32(dr["DuracaoSegundo"]);
+
                 G.Imagem = Convert.ToString(dr["Imagem"]);
                 /// Campo Valor_do_ingresso
 
