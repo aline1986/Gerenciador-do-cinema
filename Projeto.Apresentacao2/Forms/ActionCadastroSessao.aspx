@@ -78,8 +78,7 @@
                         vwsfs.HorarioFimFilmeMinuto = Convert.ToInt32(dr["HorarioInicioMinutoSessao"]) + Convert.ToInt32(dr["DuracaoMinutoFilme"]);
                         vwsfs.HorarioFimFilmeSegundo = Convert.ToInt32(dr["HorarioInicioSegundoSessao"]) + Convert.ToInt32(dr["DuracaoSegundoFilme"]);
 
-                        if(gs.Id_filme == vwsfs.Id_Filme 
-                            && gs.Id_sala == vwsfs.Id_Sala
+                        if(gs.Id_sala == vwsfs.Id_Sala
                             && gs.Data == vwsfs.DiaFilme
                             && (gs.Horario_de_inicio >= vwsfs.HorarioInicioFilme 
                             || gs.Horario_de_inicio <= vwsfs.HorarioInicioFilme)

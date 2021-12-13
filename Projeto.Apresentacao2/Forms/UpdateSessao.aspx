@@ -23,7 +23,7 @@
 
                     Gerenciamento_de_sessoes gs = new Gerenciamento_de_sessoes();
                     gs.Id = Convert.ToInt32(Request.Form["Id"]);
-
+                    gs.Data = DateTime.Parse(Request.Form["Data"]);
                     gs.Horario_de_inicio = Convert.ToInt32(Request.Form["Horario_de_inicio"]);
                     gs.Valor_do_ingresso = Convert.ToDouble(Request.Form["Valor_do_ingresso_reais"]);
                     gs.Valor_do_ingresso_centavos = Convert.ToDouble(Request.Form["Valor_do_ingresso_centavos"]);
@@ -70,7 +70,7 @@
 
                     }
                     SqlCommand com = new SqlCommand("UPDATE Gerenciamento_de_sessoes SET " +
-                        "Horario_de_inicio = " + gs.Horario_de_inicio + ", Valor_do_ingresso_reais = " + gs.Valor_do_ingresso + " " +
+                        "Data = '" + gs.Data.Year + "-" + gs.Data.Month + "-" + gs.Data.Day + "', Horario_de_inicio = " + gs.Horario_de_inicio + ", Valor_do_ingresso_reais = " + gs.Valor_do_ingresso + " " +
                         ", Horario_de_inicio_Minuto = " + gs.Horario_de_inicio_Minuto + ",  Horario_de_inicio_Segundo = " + gs.Horario_de_Inicio_Segundo + ", Valor_do_ingresso_centavos = " + gs.Valor_do_ingresso_centavos + " Where Id = " + gs.Id, con);
                     com.ExecuteReader();
 
@@ -93,11 +93,11 @@
                                                 {
                                                     /// Se tiver que da tratamento
                     %> 
-            <%: e.Message %>
-           <!-- <script>
+           
+           <script>
                 window.location.href = "../Home/EditarErroSessao";
-            </script>-->
-                    
+            </script>
+            <%: e.Message %>         
                        
                                            <% /// Gera a mensagem de erro %>     
                 <% }

@@ -70,6 +70,9 @@
     <input type="hidden" name="Duracao_Segundo" style="margin-left: 50px"  class="form-control"  value="<%: gs.Duracao_Segundo %>">
     <div class="row">
         <div class="col-md-4">
+            <label style="margin-left: 50px"><font face="arial" size="3">Data da sessão:</font></label>
+            <input type="date" name="Data" style="margin-left: 50px" class="form-control"  value="<%: gs.Data %>"/>
+            <br /><br />    
             <label style="margin-left: 50px"><font face="arial" size="3">Horário de Início em Horas:</font></label>
             <input type="number" name="Horario_de_inicio" min="0" max="23" style="margin-left: 50px" value="<%: gs.Horario_de_inicio %>" class="form-control" />
             <br /><br />

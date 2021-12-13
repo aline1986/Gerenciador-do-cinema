@@ -31,7 +31,7 @@
 
     </div>
 <br /><br /><br /><br />
-<strong><font face="arial" size="6">Listagem de Sessões</font></strong>
+<strong><font face="arial" size="6">Alterar Sessões</font></strong>
 <br /><br />
 <hr /><script>
             function Alert()
@@ -70,18 +70,18 @@
             
                     <table border style="margin-left: 150px" width="2500px" height="300px">
                         <th bgcolor="gray">
-                            <td bgcolor="gray" width="150px"><strong><center>Título do Filme</center></strong></td>
-                            <td bgcolor="gray" width="300px"><strong><center>Descrição do Filme</center></strong></td>
-                            <td bgcolor="gray" width="1350px"><strong><center>Duração do Filme</center></strong></td>
-                            <td bgcolor="gray"><strong><center>Imagem do Filme</center></strong></td>
+                            <td bgcolor="gray" width="150px"><strong><center>Título do filme</center></strong></td>
+                            <td bgcolor="gray" width="300px"><strong><center>Descrição do filme</center></strong></td>
+                            <td bgcolor="gray" width="1350px"><strong><center>Duração do filme</center></strong></td>
+                            <td bgcolor="gray"><strong><center>Imagem do filme</center></strong></td>
                             <td bgcolor="gray" width="180px"><strong><center>Sala</center></strong></td>
-                            <td bgcolor="gray" width="550px"><strong><center>Quantidade de Assentos da Sala</center></strong></td>
-                            <td bgcolor="gray" width="150px"><strong><center>Dia do Filme</center></strong></td>
-                            <td bgcolor="gray" width="750px"><strong><center>Horário de Início do Filme</center></strong></td>
-                            <td bgcolor="gray" width="150px"><strong><center>Horário Final do Filme</center></strong></td>
-                            <td bgcolor="gray" width="150px"><strong><center>Tipo de Animação</center></strong></td>
-                            <td bgcolor="gray" width="150px"><strong><center>Tipo de Áudio</center></strong></td>
-                            <td bgcolor="gray" width="150px"><strong><center>Valor do Ingresso</center></strong></td>
+                            <td bgcolor="gray" width="550px"><strong><center>Quantidade de assentos da sala</center></strong></td>
+                            <td bgcolor="gray" width="150px"><strong><center>Dia do filme</center></strong></td>
+                            <td bgcolor="gray" width="750px"><strong><center>Horário de início do filme</center></strong></td>
+                            <td bgcolor="gray" width="150px"><strong><center>Horário final do filme</center></strong></td>
+                            <td bgcolor="gray" width="150px"><strong><center>Tipo de animação</center></strong></td>
+                            <td bgcolor="gray" width="150px"><strong><center>Tipo de áudio</center></strong></td>
+                            <td bgcolor="gray" width="150px"><strong><center>Valor do ingresso</center></strong></td>
                             <td bgcolor="gray"><strong><center>Editar</center></strong></td>
                         </th>
                     <%while (dr.Read())
