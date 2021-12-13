@@ -81,18 +81,18 @@
                         if(gs.Id_filme == vwsfs.Id_Filme 
                             && gs.Id_sala == vwsfs.Id_Sala
                             && gs.Data == vwsfs.DiaFilme
-                            && (gs.Horario_de_inicio == vwsfs.HorarioInicioFilme 
-                            || gs.Horario_de_fim == vwsfs.HorarioInicioFilme)
-                            && (gs.Horario_de_fim == vwsfs.HorarioInicioFilme
-                            || gs.Horario_de_fim == vwsfs.HorarioFimFilme)
-                            && (gs.Horario_de_inicio_Minuto == vwsfs.Horario_de_inicio_Minuto
-                            || gs.Horario_de_inicio_Minuto == vwsfs.HorarioFimFilmeMinuto)
-                            && (gs.Horario_de_Inicio_Segundo ==  vwsfs.Horario_de_inicio_Segundo
-                            || gs.Horario_de_Inicio_Segundo == vwsfs.HorarioFimFilmeSegundo)
-                            && (gs.Horario_de_fim_Minuto == vwsfs.HorarioFimFilmeMinuto 
-                            || gs.Horario_de_fim_Minuto == vwsfs.Horario_de_inicio_Minuto)
-                            && (gs.Horario_de_fim_Segundo == vwsfs.HorarioFimFilmeSegundo
-                            || gs.Horario_de_fim_Segundo == vwsfs.HorarioFimFilmeSegundo))
+                            && (gs.Horario_de_inicio >= vwsfs.HorarioInicioFilme 
+                            || gs.Horario_de_inicio <= vwsfs.HorarioInicioFilme)
+                            && (gs.Horario_de_fim >= vwsfs.HorarioInicioFilme
+                            || gs.Horario_de_fim <= vwsfs.HorarioFimFilme)
+                            && (gs.Horario_de_inicio_Minuto >= vwsfs.Horario_de_inicio_Minuto
+                            || gs.Horario_de_inicio_Minuto <= vwsfs.HorarioFimFilmeMinuto)
+                            && (gs.Horario_de_fim_Minuto >=  vwsfs.Horario_de_inicio_Minuto
+                            || gs.Horario_de_fim_Minuto <= vwsfs.HorarioFimFilmeMinuto)
+                            && (gs.Horario_de_Inicio_Segundo >= vwsfs.Horario_de_inicio_Segundo
+                            || gs.Horario_de_Inicio_Segundo <= vwsfs.HorarioFimFilmeSegundo)
+                            && (gs.Horario_de_fim_Segundo >= vwsfs.Horario_de_inicio_Segundo
+                            || gs.Horario_de_fim_Segundo <= vwsfs.HorarioFimFilmeSegundo))
                         { %>
             <script>
                 window.location.href = "../Home/CadastroErroSessao";
