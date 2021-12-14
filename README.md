@@ -94,6 +94,7 @@ qunato na alteração da imagem do filme.
 
 🟤 Imagem do filme para inserir em cadastro de filme você tem que antes baixar da internet e copiar a imagem  está na pasta de download e tem que colar no disco C:;
     Para cadastrar novamente a mesma imagem tem que fazer o mesmo processo. 
+    
 🟣 Em alterar dados de filme os segundos tem que colocar  0 (zero) se você não quiser colocar nenhum valor;
 
 ⚫ Em alterar dados da sessão você tem que colocar sempre uma data (mesmo que seja a anterior, se você for alterar os outros campos ). 
