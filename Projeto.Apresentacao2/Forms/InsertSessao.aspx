@@ -63,7 +63,7 @@
                 <select name="Tipo_de_audio" style="margin-left: 50px; width: 170px" class="form-control">
                      <option selected="selected" value="">Selecione a Opção</option>
                      <option value="Dublado">Dublado</option>
-                     <option value="Legendado">Legendado</option>
+                     <option value="Original">Original</option>
                 </select>
             <br /><br />
             <label style="margin-left: 50px"><font face="arial" size="3">Filme e duração:</font></label>
