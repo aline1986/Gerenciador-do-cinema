@@ -67,6 +67,33 @@ Você vai ter que colocar a imagem no disco c, fazer ctrl + c e ctrl + v e depoi
 
 qunato na alteração da imagem do filme. 
 
+10- Observações:
+
+🔴Feito em MVC:
+- Consultar filmes;
+-Index(onde tem acessar);
+-Logado;
+-Cadastrar salas
+-Consultar filmes;
+-Cadastrar usuário;
+
+🔵Feito em WebForms:
+-Cadastrar filmes
+-Alterar dados de filmes
+-Excluir filmes;
+-Alterar a imagem de filmes;
+-Alterar salas;
+-Excluir salas;
+-Consultar salas;
+- Cadastrar sessões 
+-Alterar sessões 
+-Excluir sessões;
+-Consultar sessões
+
+🟢  Filme e duração estão em uma só combo : em cadastro de sessão;
+
+🟤 Imagem do filme para inserir em cadastro de filme você tem que antes baixar da internet e copiar a imagem  está na pasta de download e tem que colar no disco C:;
+    Para cadastrar novamente a mesma imagem tem que fazer o mesmo processo. 
 
 Qualquer dúvida entrar em contato:
 
