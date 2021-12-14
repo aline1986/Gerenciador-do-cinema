@@ -21,7 +21,7 @@
     </div>
 </div>
 <br /><br /><br /><br />
-<h2 style="margin-left:100px">Consulta da Sessão Para Alterar os seus Dados</h2>
+<h2 style="margin-left:100px">Alterar dados das sessões :</h2>
 <hr />
 <form method="post" action="UpdateSessao.aspx">
    <%@Import Namespace="System.Data"  %>
@@ -71,7 +71,7 @@
     <div class="row">
         <div class="col-md-4">
             <label style="margin-left: 50px"><font face="arial" size="3">Data da sessão:</font></label>
-            <input type="date" name="Data" style="margin-left: 50px" class="form-control"  value="<%: gs.Data %>"/>
+            <input type="date" name="Data" style="margin-left: 50px" class="form-control"  value="<%: gs.Data %>"  />
             <br /><br />    
             <label style="margin-left: 50px"><font face="arial" size="3">Horário de Início em Horas:</font></label>
             <input type="number" name="Horario_de_inicio" min="0" max="23" style="margin-left: 50px" value="<%: gs.Horario_de_inicio %>" class="form-control" />
@@ -89,16 +89,100 @@
                         <label style="margin-left: 50px"><font face="arial" size="3">Tipo de Áudio:</font></label>
                 <select name="Tipo_de_audio" style="margin-left: 50px" class="form-control">
                      <option value="">Selecione a Opção</option>
-                     <option selected="selected" value="<%: gs.Tipo_de_audio %>"><%: gs.Tipo_de_audio %></option>
-                     <option value="Dublado">Dublado</option>
-                     <option value="Legendado">Legendado</option>
+                     <%if (gs.Tipo_de_audio == "dublado")
+                         { %>">
+                     <option selected="selected" value="Dublado">Dublado</option>
+                     <option value="Original">Original</option>
+                    <%}
+    else
+    { %>
+                    <option selected="selected" value="Original">Original</option>
+                    <option  value="Dublado">Dublado</option>
+                    <%} %>
                 </select>
             <br /><br />
                   <% } %>
+                    <label style="margin-left: 50px"><font face="arial" size="3">Tipo de animação:</font></label>
+                <select name="Tipo_de_animacao" style="margin-left: 50px; width: 170px" class="form-control">
+                     <option selected="selected" value="">Selecione a Opção</option>
+                    <%if (gs.Tipo_de_animacao == "2D")
+                        { %>"> 
+                    <option selected="selected" value="2D">2D</option>
+                     <option value="3D">3D</option>
+                    <% }
+    else
+    { %>
+                    <option value="2D">2D</option>
+                     <option selected="selected" value="3D">3D</option>
+                    <% } %>
+                </select>
+            <br /><br />
+              <label style="margin-left: 50px"><font face="arial" size="3">Filme e duração:</font></label>
+                <select name="Id_Filme" style="margin-left: 50px" class="form-control">
+                     <option value="">Selecione a Opção</option>
+                   <%
+                       SqlConnection con2 = new SqlConnection(ConfigurationManager.ConnectionStrings["GerenciadorDoCinema"].ConnectionString);
+                       con2.Open();
+                       SqlCommand com2 = new SqlCommand("SELECT * FROM Gerenciamento_de_filmes", con2);
+                       SqlDataReader dr2 = com2.ExecuteReader();
+                       while (dr2.Read())
+                       {
+                           Gerenciamento_de_filmes gf = new Gerenciamento_de_filmes();
+                           gf.Id = Convert.ToInt32(dr2["Id"]);
+                           gf.Titulo = dr2["Titulo"].ToString();
+                           gf.Duracao = Convert.ToInt32(dr2["Duracao"]);
+                           gf.DuracaoMinuto = Convert.ToInt32(dr2["DuracaoMinuto"]);
+                           gf.DuracaoSegundo = Convert.ToInt32(dr2["DuracaoSegundo"]);
+
+                           if (gs.Id_filme == gf.Id)
+                           { %>
+                            <option selected="selected"  value = "<%: gf.Id %>"><%: gf.Titulo %> - Duração do Filme: <%: gf.Duracao %> Horas <%: gf.DuracaoMinuto %> Minutos <%: gf.DuracaoSegundo %> Segundos</option>
+                          <% } else
+                              { %>
+                    <option value = "<%: gf.Id %>"><%: gf.Titulo %> - Duração do Filme: <%: gf.Duracao %> Horas <%: gf.DuracaoMinuto %> Minutos <%: gf.DuracaoSegundo %> Segundos</option>
+
+                              <%}
+
+                           %>
+                            
                     
-                   
-             
+
+                       
+                       <% } con2.Close();
+                       %>
+             </select>
+                   <br /><br />
+     <label style="margin-left: 50px"><font face="arial" size="3">Sala:</font></label>
+                <select name="Id_Sala" style="margin-left: 50px" class="form-control">
+                     <option selected="selected" value="">Selecione a Opção</option>
+             <%
+                       SqlConnection con3 = new SqlConnection(ConfigurationManager.ConnectionStrings["GerenciadorDoCinema"].ConnectionString);
+                       con3.Open();
+                       SqlCommand com3 = new SqlCommand("SELECT * FROM Lista_de_salas", con3);
+                       SqlDataReader dr3 = com3.ExecuteReader();
+                       while (dr3.Read())
+                       {
+                           Lista_de_salas ls = new Lista_de_salas();
+                           ls.Id = Convert.ToInt32(dr3["Id"]);
+                           ls.Nome = dr3["Nome"].ToString();
+                           
+                           if (gs.Id_sala == ls.Id)
+                           { %>
+                            <option selected="selected"  value = "<%: ls.Id %>"><%: ls.Nome %> </option>
+                          <% } else
+                              { %>
+                    <option value = "<%: ls.Id %>"><%: ls.Nome %></option>
+
+                              <%}
+
+                           %>
+                            
                     
+
+                       
+                       <% } con3.Close();
+                       %>
+             </select>
         <% con.Close();
         /// Fecha a Conexao
     }%>

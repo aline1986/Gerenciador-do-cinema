@@ -69,9 +69,12 @@
                         }
 
                     }
+                    gs.Id_filme = Convert.ToInt32(Request.Form["Id_Filme"]);
+                    gs.Id_sala = Convert.ToInt32(Request.Form["Id_Sala"]);
                     SqlCommand com = new SqlCommand("UPDATE Gerenciamento_de_sessoes SET " +
                         "Data = '" + gs.Data.Year + "-" + gs.Data.Month + "-" + gs.Data.Day + "', Horario_de_inicio = " + gs.Horario_de_inicio + ", Valor_do_ingresso_reais = " + gs.Valor_do_ingresso + " " +
-                        ", Horario_de_inicio_Minuto = " + gs.Horario_de_inicio_Minuto + ",  Horario_de_inicio_Segundo = " + gs.Horario_de_Inicio_Segundo + ", Valor_do_ingresso_centavos = " + gs.Valor_do_ingresso_centavos + " Where Id = " + gs.Id, con);
+                        ", Horario_de_inicio_Minuto = " + gs.Horario_de_inicio_Minuto + ",  Horario_de_inicio_Segundo = " + gs.Horario_de_Inicio_Segundo + ", Valor_do_ingresso_centavos = " + gs.Valor_do_ingresso_centavos + ", " +
+                        "Id_filme = " + gs.Id_filme + ", Id_sala = " + gs.Id_sala + " Where Id = " + gs.Id, con);
                     com.ExecuteReader();
 
 
