@@ -102,7 +102,7 @@ qunato na alteração da imagem do filme.
 
 Qualquer dúvida entrar em contato:
 
-e-mail: aline.santana001@gmail.com
+e-mail: ar2526232@gmail.com
 
 
 
